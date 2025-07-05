@@ -7,9 +7,17 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('landingpage');
+    return view('home');
 });
 
-Route::get('/tes', function () {
-    return 'hello world';
+Route::get('/peminjaman', function () {
+    return view('peminjaman');
+});
+
+Route::get('/informasi', function () {
+    return view('informasi');
+});
+
+Route::get('/bookingansaya', function () {
+    return view('bookingansaya');
 });
