@@ -19,7 +19,7 @@
             <div class="header-container">
                 
                 <a href="{{ url('/home') }}" class="header-logo">
-                    <img class="logo-sigma-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO SIGMA 2 Vector Header.svg') }}">
+                    <img class="logo-sigma-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO_SIGMA_2_Vector_Header.svg') }}">
                 </a>
 
                 <nav class="header-nav">
@@ -37,7 +37,7 @@
 
         <main>
             <!-- Banner -->
-            <section class="banner" style="background-image: url('{{ asset('storage/image/Banner Dekanat.png') }}')">
+            <section class="banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}')">
             <div class="overlay">
                 <h1>Peminjaman</h1>
             </div>

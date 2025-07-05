@@ -20,7 +20,7 @@
         <div class="header-container">
             
             <a href="{{ url('/home') }}" class="header-logo">
-                <img class="logo-sigma-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO SIGMA 2 Vector Header.svg') }}">
+                <img class="logo-sigma-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO_SIGMA_2_Vector_Header.svg') }}">
             </a>
 
             <nav class="header-nav">
@@ -48,7 +48,7 @@
         </a>
         
         <div class="vector-parent">
-            <img class="vector-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO SIGMA 1 Vector.svg') }}">
+            <img class="vector-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO_SIGMA_1_Vector.svg') }}">
 
             <header class="hero-text">
                 <h1 id="hero-heading" class="sistem-informasi">Sistem Informasi</h1>
