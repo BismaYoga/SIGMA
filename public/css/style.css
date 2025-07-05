@@ -1,0 +1,664 @@
+body {
+  	margin: 0;
+  	line-height: normal;
+}
+
+.notloginhome {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	height: 2536px;
+  	overflow: hidden;
+  	text-align: center;
+  	font-size: 103.3px;
+  	color: #fff;
+  	font-family: Gotham;
+}
+
+.notloginpeminjaman {
+  	width: 100%;
+  	position: relative;
+  	background-color: #fff;
+  	height: 2536px;
+  	overflow: hidden;
+  	text-align: center;
+  	font-size: 103.3px;
+  	color: #fff;
+  	font-family: Gotham;
+}
+
+.header-notlogin {
+  	position: relative;
+    text-decoration: none;
+  	height: 5.13%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 94.87%;
+  	left: 0%;
+  	font-size: 24px;
+  	font-family: 'Google Sans Display';
+    background-color: #2e4156;
+}
+
+.logo-sigma-icon {
+  	position: absolute;
+  	height: 33.85%;
+  	width: 7.55%;
+  	top: 33.85%;
+  	right: 82.19%;
+  	bottom: 32.31%;
+  	left: 10.26%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+
+.nav-menu {
+  	position: absolute;
+    list-style-type:none;
+    display: flex;
+    text-align: right;
+    gap: 100px;
+  	height: 23.85%;
+  	width: 55%;
+  	top: 25%;
+  	right: 7%;
+  	bottom: 25%;
+  	left: 43%;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    
+}
+
+.nav-menu a:hover {
+    font-weight: bold;
+}
+
+.hero {
+  	position: absolute;
+  	width: calc(100% - 2px);
+  	top: 130px;
+  	right: 2px;
+  	left: 0px;
+  	height: 950px;
+  	overflow: hidden;
+  	background-image: url('/Assets/gambar/gambar_head.png');
+  	background-size: cover;
+  	background-repeat: no-repeat;
+  	background-position: top;
+  	font-size: 48px;
+  	font-family: 'Gotham Black';
+}
+
+.hero-inner {
+  	position: absolute;
+  	top: 320px;
+  	left: 128px;
+  	width: 807px;
+  	height: 282px;
+
+}
+
+.rectangle-div {
+  	position: absolute;
+  	top: 152px;
+  	left: 0px;
+  	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  	filter: blur(0px);
+  	border-radius: 30px;
+  	background-color: #2e4156;
+  	width: 807px;
+  	height: 130px;
+  	cursor: pointer;
+}
+
+.vector-parent {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 807px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	padding: 0px 2px;
+  	box-sizing: border-box;
+  	gap: 0px;
+  	text-align: left;
+  	font-size: 38px;
+  	color: #292e3d;
+  	font-family: Gotham;
+}
+
+.booking-sekarang {
+  	position: absolute;
+  	top:186px;
+  	left: 180px;
+}
+
+.about-sigmaboxin {
+  	position: absolute;
+  	top: 1080px;
+  	left: calc(50% - 960px);
+  	background-color: #4c627b;
+  	width: 1920px;
+  	height: 1080px;
+}
+
+.sigma {
+  	color: #f1c30f;
+}
+.about-sigma {
+  	position: relative  ;
+  	top: 0px;
+  	left: 20px;
+    font-size: 103.3px;
+  	text-align: center;
+}
+.sigma-dikembangkan-untuk {
+  	position: absolute;
+  	top: 200px;
+  	left: 307px;
+    text-align: center;
+  	font-size: 23.85px;
+  	font-family: Poppins;
+  	display: inline-block;
+  	width: 1306px;
+  	height: 107px;
+}
+
+.component-footer {
+  	position: absolute;
+  	bottom: 0px;
+  	left: calc(50% - 960px);
+  	width: 1920px;
+  	height: 376px;
+  	text-align: left;
+  	font-size: 20px;
+}
+
+.footer {
+  	position: absolute;
+  	bottom: 0px;
+  	left: 0px;
+  	background-color: #2e4156;
+  	width: 1920px;
+  	height: 376px;
+}
+
+.group-logofooter {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 362px;
+  	height: 100.7px;
+}
+
+.shortcut {
+  	position: absolute;
+  	bottom: 114px;
+  	left: 545px;
+  	width: 282px;
+  	height: 155px;
+  	font-size: 32px;
+}
+
+.call-parent {
+  	position: absolute;
+  	bottom: 59.8px;
+  	left: 952px;
+  	width: 384px;
+  	height: 257.2px;
+}
+
+.reservation {
+  	position: absolute;
+  	bottom: 144.1px;
+  	left: 0px;
+  	width: 384px;
+  	height: 113.1px;
+}
+
+.reservasi {
+  	position: absolute;
+  	bottom: 62.3px;
+  	left: 0px;
+  	font-size: 40px;
+  	text-transform: uppercase;
+  	display: flex;
+  	align-items: center;
+  	width: 384px;
+  	height: 50.8px;
+}
+
+.call-reservasi {
+  	position: relative;
+    top: 35px;
+  	bottom: 0.03px;
+  	left: 0px;
+  	font-weight: 500;
+  	display:inherit;
+    /* display: block; */
+  	align-items: center;
+    text-align: left;
+    font-style: normal;
+  	width: 332px;
+  	height: 40px;
+    
+}
+
+.contact-center {
+  	position: absolute;
+  	bottom: -0.1px;
+  	left: 0px;
+  	width: 384px;
+  	height: 113.1px;
+}
+
+.office-parent {
+  	position: absolute;
+  	bottom: 59.8px;
+  	left: 1461px;
+  	width: 384px;
+  	height: 257.2px;
+}
+
+.gedung-dekanat-fmipa-container {
+  	position: absolute;
+    top: 35px;
+  	bottom: 0.03px;
+  	left: 0px;
+  	display: inherit;
+  	align-items: center;
+  	width: 384px;
+  	height: 42.7px;
+  	cursor: pointer;
+}
+
+.gedung-dekanat-fmipa {
+  	margin: 0;
+  	font-weight: 500;
+}
+
+.hours {
+  	position: absolute;
+  	bottom: 0px;
+  	left: 0px;
+  	width: 332px;
+  	height: 113.2px;
+}
+
+.operasional {
+  	position: absolute;
+  	bottom: 62.2px;
+  	left: 0px;
+  	font-size: 40px;
+  	text-transform: uppercase;
+  	display: flex;
+  	align-items: center;
+  	width: 320px;
+  	height: 51px;
+}
+
+.wita-monday-container {
+  	position: absolute;
+    /* top: 35px; */
+  	bottom: -0.07px;
+  	left: 0px;
+  	display:inline-flex;
+  	align-items: center;
+  	width: 320px;
+  	height: 0px;
+}
+
+
+
+
+
+/* .header-notlogin{
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	background-color: #2e4156;
+} */
+
+
+.group-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 505.33px;
+  	border-radius: 31.58px;
+  	width: 225.3px;
+  	height: 495.7px;
+  	object-fit: cover;
+}
+.group-item {
+  	position: absolute;
+  	top: 233.96px;
+  	left: 0px;
+  	border-radius: 31.58px;
+  	width: 225.3px;
+  	height: 148.3px;
+  	object-fit: cover;
+}
+.group-inner {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 31.58px;
+  	width: 225.3px;
+  	height: 206.2px;
+  	object-fit: cover;
+}
+.rectangle-group {
+  	position: absolute;
+  	top: 57.91px;
+  	left: 757.99px;
+  	width: 225.3px;
+  	height: 382.2px;
+}
+.rectangle-icon {
+  	position: absolute;
+  	top: 143.62px;
+  	left: 1010.65px;
+  	border-radius: 31.58px;
+  	width: 225.3px;
+  	height: 210.8px;
+  	object-fit: cover;
+}
+.group-icon {
+  	position: absolute;
+  	top: 57.91px;
+  	left: 0px;
+  	width: 478px;
+  	height: 382.2px;
+  	object-fit: contain;
+}
+.rectangle-parent {
+  	position: absolute;
+  	top: 1528px;
+  	left: 342px;
+  	width: 1236px;
+  	height: 495.7px;
+}
+
+.download-4 {
+  	position: absolute;
+  	top: 675px;
+  	left: 994px;
+  	width: 318px;
+  	height: 159px;
+}
+.images-1 {
+  	position: absolute;
+  	top: 977px;
+  	left: 593px;
+  	width: 259px;
+  	height: 194px;
+}
+
+
+.vector-icon {
+  	width: 100px;
+  	position: relative;
+  	height: 100px;
+}
+.sistem-informasi1 {
+  	font-size: 78px;
+}
+.span {
+  	font-size: 93.2px;
+}
+.sistem-informasi {
+  	margin: 0;
+}
+.peminjaman-gedung-mahasiswa {
+  	margin: 0;
+  	letter-spacing: 0.04em;
+}
+.sistem-informasi-peminjaman-container1 {
+  	width: 100%;
+}
+.sistem-informasi-peminjaman-container {
+  	width: 664px;
+  	position: relative;
+  	display: flex;
+  	align-items: flex-end;
+  	height: 100px;
+  	flex-shrink: 0;
+}
+
+.rectangle-container {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 807px;
+  	height: 282px;
+}
+
+/* .hero {
+  	position: absolute;
+  	width: calc(100% - 2px);
+  	top: 130px;
+  	right: 2px;
+  	left: 0px;
+  	height: 950px;
+  	overflow: hidden;
+  	background-image: url('Hero.png');
+  	background-size: cover;
+  	background-repeat: no-repeat;
+  	background-position: top;
+  	font-size: 48px;
+  	font-family: 'Gotham Black';
+} */
+.wireframe-notloghome-item {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 1918px;
+  	height: 993px;
+}
+
+
+
+
+
+.tentang-sigma {
+  	position: absolute;
+  	bottom: 127px;
+  	left: 0px;
+  	font-weight: 500;
+  	display: flex;
+  	align-items: center;
+  	width: 274px;
+  	height: 28px;
+  	cursor: pointer;
+}
+.faq {
+  	position: absolute;
+  	bottom: 85px;
+  	left: 0px;
+  	font-weight: 500;
+  	display: flex;
+  	align-items: center;
+  	width: 88px;
+  	height: 26px;
+  	cursor: pointer;
+}
+.sk {
+  	position: absolute;
+  	bottom: 44px;
+  	left: 0px;
+  	font-weight: 500;
+  	display: flex;
+  	align-items: center;
+  	width: 82px;
+  	height: 25px;
+  	cursor: pointer;
+}
+.kebijakan-privasi {
+  	position: absolute;
+  	bottom: 0px;
+  	left: 0px;
+  	font-weight: 500;
+  	display: flex;
+  	align-items: center;
+  	width: 282px;
+  	height: 28px;
+  	cursor: pointer;
+}
+
+/* .group-child1 {
+  	position: absolute;
+  	top: 1.12px;
+  	left: 162.79px;
+  	background-color: #f1c30f;
+  	width: 10.2px;
+  	height: 11.3px;
+} */
+
+.group-div {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 172.9px;
+  	height: 100.7px;
+}
+/* .sigma-icon {
+  	position: absolute;
+  	top: 1.07px;
+  	left: 111.72px;
+  	width: 232.3px;
+  	height: 49.4px;
+}
+.udayana-icon {
+  	position: absolute;
+  	top: 67px;
+  	left: 112px;
+  	width: 230.6px;
+  	height: 33.6px;
+} */
+.logo-sigma-footer {
+  	position: absolute;
+  	top: 138px;
+  	left: 76px;
+  	width: 344px;
+  	height: 262px;
+}
+.footer {
+  	position: absolute;
+  	bottom: 0px;
+  	left: 0px;
+  	width: 1920px;
+  	height: 376px;
+}
+.component-footer-notlog1 {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+}
+.component-footer-notlog {
+  	position: absolute;
+  	bottom: 0px;
+  	left: calc(50% - 960px);
+  	width: 1920px;
+  	height: 376px;
+  	text-align: left;
+  	font-size: 20px;
+}
+.component-header-user-not-lo-child {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	background-color: #2e4156;
+}
+.home {
+  	position: absolute;
+  	width: 6.88%;
+  	top: 0%;
+  	left: 0%;
+  	display: inline-block;
+}
+.peminjaman {
+  	position: absolute;
+  	width: 15.61%;
+  	top: 0%;
+  	left: 17.04%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.informasi {
+  	position: absolute;
+  	height: 100%;
+  	width: 10.37%;
+  	top: 0%;
+  	left: 42.81%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.bookingan-saya {
+  	position: absolute;
+  	height: 100%;
+  	width: 17.45%;
+  	top: 0%;
+  	left: 64.48%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+.login {
+  	position: absolute;
+  	height: 100%;
+  	width: 6.78%;
+  	top: 0%;
+  	left: 93.22%;
+  	display: inline-block;
+  	cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  background-image: url('/Assets/gambar/Banner\ Dekanat.png'); /* ganti dengan path gambar kamu */
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Atur tinggi sesuai kebutuhan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.infomasi-singkat p{
+	width: 1521px;
+	position: relative;
+	font-size: 24px;
+	font-family: Gotham;
+	color: #000;
+	text-align: justify;
+	display: inline-block;
+	height: 137px;
+}
+
+
+
