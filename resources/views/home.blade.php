@@ -17,37 +17,47 @@
     
     <!-- Header -->
     <header class="header-notlogin">
-      <div class="header-notlogin"></div>
-      	<ul class="nav-menu">
-          <li><a href="home" id="home">Home</a></li>
-          <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
-          <li><a href="informasi" id="informasiText">Informasi</a></li>
-          <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
-          <li><a href="login" id="loginText">Login</a></li>
-		</ul>
-      <img class="logo-sigma-icon" alt="Logo SIGMA" src="/Assets/gambar/LOGO SIGMA 2 Vector Header.svg">
+        <div class="header-container">
+            
+            <a href="{{ url('/home') }}" class="header-logo">
+                <img class="logo-sigma-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO SIGMA 2 Vector Header.svg') }}">
+            </a>
+
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li><a href="home" id="home">Home</a></li>
+                    <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
+                    <li><a href="informasi" id="informasiText">Informasi</a></li>
+                    <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
+                    <li><a href="login" id="loginText">Login</a></li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
     <main>
-      <!-- Hero Section sebagai Banner -->
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-inner">
-            <div class="rectangle-container" id="rectangle-bookingsekarang">
-              <div class="rectangle-div"></div>
-              <div class="booking-sekarang ">Booking Sekarang</div>
-              
-              <div class="vector-parent">
-                <img class="vector-icon" alt="" src="/Assets/gambar/LOGO SIGMA 1 Vector.svg">
+    <!-- Hero Section sebagai Banner -->
+    <section class="hero" style="background-image: url('{{ asset('storage/image/gambar_head.png') }}')" aria-labelledby="hero-heading">
+      
+      <div class="hero-inner">
+          
+        <a href="{{ url('/booking') }}" class="rectangle-container">
+            <div class="rectangle-div"></div>
+            <div class="booking-sekarang">Booking Sekarang</div>
+        </a>
+        
+        <div class="vector-parent">
+            <img class="vector-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO SIGMA 1 Vector.svg') }}">
 
-                <header class="hero-text">
-                  <h1 id="hero-heading" class="sistem-informasi">Sistem Informasi</h1>
-                  <p class="peminjaman-gedung-mahasiswa">Peminjaman Gedung Mahasiswa</p>
-                </header>
-              </div>
-            </div>
-            <!-- <img class="hero-img" alt="" src="/Assets/gambar/gambar_head.png"> -->
+            <header class="hero-text">
+                <h1 id="hero-heading" class="sistem-informasi">Sistem Informasi</h1>
+                <p class="peminjaman-gedung-mahasiswa">Peminjaman Gedung Mahasiswa</p>
+            </header>
         </div>
-      </section>
+      
+      </div>
+    </section>
 
       <!-- Tentang SIGMA -->
       <section aria-labelledby="about-sigmabox">

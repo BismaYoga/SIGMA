@@ -16,20 +16,28 @@
     <div class="notloginpeminjaman">
         <!-- Header -->
         <header class="header-notlogin">
-        <div class="header-notlogin"></div>
-            <ul class="nav-menu">
-              <li><a href="home" id="home">Home</a></li>
-              <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
-              <li><a href="informasi" id="informasiText">Informasi</a></li>
-              <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
-              <li><a href="login" id="loginText">Login</a></li>
-            </ul>
-                <img class="logo-sigma-icon" alt="Logo SIGMA" src="/Assets/gambar/LOGO SIGMA 2 Vector Header.svg">
+            <div class="header-container">
+                
+                <a href="{{ url('/home') }}" class="header-logo">
+                    <img class="logo-sigma-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO SIGMA 2 Vector Header.svg') }}">
+                </a>
+
+                <nav class="header-nav">
+                    <ul class="nav-menu">
+                        <li><a href="home" id="home">Home</a></li>
+                        <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
+                        <li><a href="informasi" id="informasiText">Informasi</a></li>
+                        <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
+                        <li><a href="login" id="loginText">Login</a></li>
+                    </ul>
+                </nav>
+
+            </div>
         </header>
 
         <main>
             <!-- Banner -->
-            <section class="banner">
+            <section class="banner" style="background-image: url('{{ asset('storage/image/Banner Dekanat.png') }}')">
             <div class="overlay">
                 <h1>Peminjaman</h1>
             </div>
