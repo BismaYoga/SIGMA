@@ -1,13 +1,48 @@
-body {
-  	margin: 0;
-  	line-height: normal;
-}
+/* ==========================================================================
+    1. RESET & GLOBAL STYLES
+========================================================================== */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+		font-family: 'Gotham', 'Helvetica Neue', sans-serif;
+		background-color: #ffffff;
+		color: #2e4156;
+		line-height: 1.6;
+		font-size: 16px;
+	}
+	
+	body.no-scroll {
+		overflow: hidden;
+	}
+
+	.page-wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	main {
+		flex-grow: 1;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 
 .notloginhome {
   	width: 100%;
   	position: relative;
   	background-color: #fff;
-  	height: 2536px;
+  	height: 100%;
   	overflow: hidden;
   	text-align: center;
   	font-size: 103.3px;
@@ -19,7 +54,7 @@ body {
   	width: 100%;
   	position: relative;
   	background-color: #fff;
-  	height: 2536px;
+  	height: 100%;
   	overflow: hidden;
   	text-align: center;
   	font-size: 103.3px;
@@ -27,7 +62,7 @@ body {
   	font-family: Gotham;
 }
 
-.header-notlogin {
+/*.header-notlogin {
   	position: relative;
     text-decoration: none;
   	height: 5.13%;
@@ -39,9 +74,9 @@ body {
   	font-size: 24px;
   	font-family: 'Google Sans Display';
     background-color: #2e4156;
-}
+} */
 
-.logo-sigma-icon {
+/* .logo-sigma-icon {
   	position: absolute;
   	height: 33.85%;
   	width: 7.55%;
@@ -52,72 +87,488 @@ body {
   	max-width: 100%;
   	overflow: hidden;
   	max-height: 100%;
+} */
+
+/* ==========================================================================
+	2. HEADER & NAVIGATION
+========================================================================== */
+.header-main {
+	position: fixed;
+	top: 0%;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: transparent;
+	padding: 32px 0;
+	color: white;
+	transition: background-color 0.4s ease, transform 0.4s ease;
 }
 
-.nav-menu {
-  	position: absolute;
-    list-style-type:none;
-    display: flex;
-    text-align: right;
-    gap: 100px;
-  	height: 23.85%;
-  	width: 55%;
-  	top: 25%;
-  	right: 7%;
-  	bottom: 25%;
-  	left: 43%;
+.header-main.scrolled {
+	background-color: #2e4156;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: normal;
-    
+.header-main.hidden {
+	transform: translateY(-100%);
 }
 
-.nav-menu a:hover {
-    font-weight: bold;
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left:  5vh;
+	padding-right: 5vh;
+	
 }
 
-.hero {
-  	position: absolute;
-  	width: calc(100% - 2px);
-  	top: 130px;
-  	right: 2px;
-  	left: 0px;
-  	height: 950px;
-  	overflow: hidden;
-  	background-image: url('/Assets/gambar/gambar_head.png');
-  	background-size: cover;
-  	background-repeat: no-repeat;
-  	background-position: top;
-  	font-size: 48px;
-  	font-family: 'Gotham Black';
+.header-logo img {
+	height: 40px;
+	width: auto;
 }
 
-.hero-inner {
-  	position: absolute;
-  	top: 320px;
-  	left: 128px;
-  	width: 807px;
-  	height: 282px;
-
+.header-logo {
+	display: flex;
+	align-items:center ;
 }
 
-.rectangle-div {
-  	position: absolute;
-  	top: 152px;
-  	left: 0px;
-  	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-  	filter: blur(0px);
-  	border-radius: 30px;
-  	background-color: #2e4156;
-  	width: 807px;
-  	height: 130px;
-  	cursor: pointer;
+.header-nav .nav-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 3rem;
 }
 
-.vector-parent {
+.header-nav li {
+	display: flex;
+	align-items: center;
+}
+
+.header-nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.4rem;
+	font-weight: 500;
+	transition: color 0.2s ease-in-out;
+}
+
+.header-nav a:hover {
+	color: #f1c30f;
+}
+
+/* --- Hamburger Menu --- */
+.hamburger-menu {
+	display: none; /* Sembunyi di desktop */
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	z-index: 1010;
+	position: relative;
+	width: 25px;
+	height: 21px;
+	align-items: center;
+}
+
+.hamburger-menu span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	margin: 5px 0;
+	transition: all 0.3s ease-in-out;
+	position: absolute;
+	left: 0;
+}
+
+.hamburger-menu span:nth-child(1) { top: 0; }
+.hamburger-menu span:nth-child(2) { top: 8px; }
+.hamburger-menu span:nth-child(3) { top: 16px; }
+
+/* Animasi Hamburger menjadi 'X' */
+.hamburger-menu.open span:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.open span:nth-child(2) {
+	opacity: 0;
+}
+.hamburger-menu.open span:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Mobile Nav Panel --- */
+.mobile-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(46, 65, 86, 0.95);
+	backdrop-filter: blur(5px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	transform: translateX(100%); /* Mulai dari luar layar */
+	transition: transform 0.4s ease-in-out;
+	z-index: 999;
+}
+
+.mobile-nav.open {
+	transform: translateX(0); /* Masuk ke layar */
+}
+
+.mobile-nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: bold;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav.open a {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Memberi delay animasi untuk setiap link menu */
+.mobile-nav.open a:nth-child(1) { transition-delay: 0.2s; }
+.mobile-nav.open a:nth-child(2) { transition-delay: 0.25s; }
+.mobile-nav.open a:nth-child(3) { transition-delay: 0.3s; }
+.mobile-nav.open a:nth-child(4) { transition-delay: 0.35s; }
+.mobile-nav.open a:nth-child(5) { transition-delay: 0.4s; }
+
+/* ==========================================================================
+    3. HERO SECTION
+========================================================================== */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-inner {
+            position: relative;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* --- FORM BOOKING BARU DI HERO --- */
+        .hero-booking-form {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        /* PERUBAHAN: Style untuk logo di dalam form */
+        .form-logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 0%; /* Memberi jarak antara logo dan label */
+        }
+
+        .hero-booking-form .form-group {
+            margin-bottom: 0%;
+        }
+
+        .hero-booking-form label {
+            display: block;
+            font-family: 'Gotham Black', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom:0%;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .hero-booking-form input[type="date"] {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            color: #2e4156;
+            -webkit-appearance: none;
+			appearance: none;
+        }
+
+        .hero-booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%232e4156" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: #2e4156;
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a2533;
+            transform: translateY(-2px);
+        }
+
+/* ==========================================================================
+    4. ABOUT SECTION
+========================================================================== */
+        .about-section {
+            background-color: #4c627b;
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Gotham Black', sans-serif;
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .text-yellow {
+            color: #f1c30f;
+        }
+
+        .section-subtitle {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+/* ==========================================================================
+           5. GALLERY SECTION
+========================================================================== */
+        .gallery-section {
+            background-color: #4c627b;
+            padding: 0 1rem 5rem 1rem;
+        }
+
+        .staggered-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 12vh);
+            gap: 15px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .item-1 { grid-column: 1; grid-row: 1 / 3; }
+        .item-2 { grid-column: 2; grid-row: 1 / 2; }
+        .item-3 { grid-column: 2; grid-row: 2 / 4; }
+        .item-center { grid-column: 1 / 3; grid-row: 4 / 6; }
+        .item-4 { grid-column: 3 / 5; grid-row: 1 / 3; }
+        .item-5 { grid-column: 3; grid-row: 3 / 6; }
+        .item-6 { grid-column: 4; grid-row: 3 / 6; }
+
+/* ==========================================================================
+    6. FOOTER
+========================================================================== */
+        .footer-main {
+            background-color: #2e4156;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-col {
+            min-width: 0;
+			text-align: left;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-heading {
+            font-family: 'Gotham Black', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: white;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col address {
+            font-style: normal;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col p {
+            margin:  0;
+			font-size: large;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+			font-size: large;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+			text-align: left;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+/* ==========================================================================
+	7. RESPONSIVE STYLES
+========================================================================== */
+        @media (max-width: 768px) {
+            .hero-booking-form {
+                padding: 1.5rem;
+            }
+            .hero-booking-form label {
+                font-size: 1.5rem;
+            }
+            .hero-booking-form input[type="date"] {
+                font-size: 1rem;
+                padding: 0.7rem;
+            }
+
+            .staggered-gallery {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .header-nav {
+                display: none;
+				
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+            
+            .gallery-section {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+			.header-logo img {
+				height: 30px;
+				width: auto;
+			}
+
+			.page-banner {
+                height: 35vh;
+                min-height: 220px;
+            }
+
+            .banner-title {
+                font-size: 2.5rem; /* Perkecil ukuran font di mobile */
+            }
+        }
+
+/* ==========================================================================
+    8. BANNER PEMINJAMAN
+========================================================================== */
+
+		.page-banner {
+            position: relative;
+            height: 40vh; /* Tinggi banner disesuaikan */
+            min-height: 280px; /* Tinggi minimum */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Overlay gelap untuk kontras teks */
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.45); /* Sedikit disesuaikan kegelapannya */
+        }
+
+        /* Konten di dalam banner */
+        .banner-content {
+            position: relative; /* Agar berada di atas overlay */
+            z-index: 1;
+        }
+
+        .banner-title {
+            font-size: 3.5rem; /* Ukuran font diperbesar */
+            font-weight: 700; /* Font tebal */
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Tambah sedikit shadow agar lebih terbaca */
+        }
+
+/* .vector-parent {
   	position: absolute;
   	top: 0px;
   	left: 0px;
@@ -236,23 +687,23 @@ body {
   	height: 50.8px;
 }
 
-.call-reservasi {
+/* .call-reservasi {
   	position: relative;
     top: 35px;
   	bottom: 0.03px;
   	left: 0px;
   	font-weight: 500;
   	display:inherit;
-    /* display: block; */
+    /* display: block; 
   	align-items: center;
     text-align: left;
     font-style: normal;
   	width: 332px;
   	height: 40px;
     
-}
+} */
 
-.contact-center {
+/*.contact-center {
   	position: absolute;
   	bottom: -0.1px;
   	left: 0px;
@@ -307,14 +758,14 @@ body {
 
 .wita-monday-container {
   	position: absolute;
-    /* top: 35px; */
+    /* top: 35px; 
   	bottom: -0.07px;
   	left: 0px;
   	display:inline-flex;
   	align-items: center;
   	width: 320px;
   	height: 0px;
-}
+} */
 
 
 
@@ -332,7 +783,7 @@ body {
 } */
 
 
-.group-child {
+/* .group-child {
   	position: absolute;
   	top: 0px;
   	left: 505.33px;
@@ -459,7 +910,7 @@ body {
   	background-position: top;
   	font-size: 48px;
   	font-family: 'Gotham Black';
-} */
+} *
 .wireframe-notloghome-item {
   	position: absolute;
   	top: 0px;
@@ -524,7 +975,7 @@ body {
   	background-color: #f1c30f;
   	width: 10.2px;
   	height: 11.3px;
-} */
+} *
 
 .group-div {
   	position: absolute;
@@ -546,7 +997,7 @@ body {
   	left: 112px;
   	width: 230.6px;
   	height: 33.6px;
-} */
+} *
 .logo-sigma-footer {
   	position: absolute;
   	top: 138px;
@@ -631,24 +1082,19 @@ body {
   	display: inline-block;
   	cursor: pointer;
 }
+*/
 
-.banner {
-  position: relative;
-  background-image: url('/Assets/gambar/Banner\ Dekanat.png'); /* ganti dengan path gambar kamu */
-  background-size: cover;
-  background-position: center;
-  height: 300px; /* Atur tinggi sesuai kebutuhan */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .banner h1 {
   color: white;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
   font-size: 3rem;
   font-weight: bold;
 }
-
+/*
 .infomasi-singkat p{
 	width: 1521px;
 	position: relative;
@@ -658,7 +1104,7 @@ body {
 	text-align: justify;
 	display: inline-block;
 	height: 137px;
-}
+} */
 
 
 
