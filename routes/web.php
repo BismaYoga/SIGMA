@@ -45,9 +45,9 @@ Route::get('/peminjaman/InformasiRuangan', function () {
     return view('peminjaman-InformasiRuangan');
 });
 
-Route::get('/bookingansaya', function () {
-    return view('bookingansaya');
-})->middleware(['auth', 'verified'])->name('bookingansaya');
+Route::get('/bookingansaya', [BookingController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('bookingansaya');
 
 Route::get('/faq', function () {
     return view('faq');
