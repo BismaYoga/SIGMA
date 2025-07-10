@@ -5,6 +5,8 @@
 	*::before,
 	*::after {
 		box-sizing: border-box;
+
+		
 	}
 
 	body {
@@ -63,6 +65,49 @@
 	flex-direction: column;
 }
 
+.loginprofile {
+  	width: 100%;
+  	position: relative;
+  	background-color: #ffffff;
+  	height: 100%;
+  	overflow: hidden;
+  	text-align: center;
+  	color: #fff;
+  	font-family: Gotham;
+}
+
+
+.registrasi {
+	width: 100%;
+  	position: relative;
+	height: 100%;
+  	overflow: hidden;
+	margin: 0;
+	font-family: 'Gotham', 'Helvetica Neue', sans-serif;
+	background-color: #4C627B; /* Warna latar belakang utama */
+	color: #ffffff;
+	display:block;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.masuk {
+	width: 100%;
+  	position: relative;
+	height: 100%;
+  	overflow: hidden;
+	margin: 0;
+	font-family: 'Gotham', 'Helvetica Neue', sans-serif;
+	background-color: #f1eeee; /* Warna latar belakang utama */
+	color: #ffffff;
+	display:block;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+
 /*.header-notlogin {
   	position: relative;
     text-decoration: none;
@@ -103,6 +148,13 @@
 	padding: 32px 0;
 	color: white;
 	transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.header-static {
+	position: sticky;
+	background-color: #2e4156;
+	padding: 32px 0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-main.scrolled {
@@ -158,6 +210,79 @@
 .header-nav a:hover {
 	color: #f1c30f;
 }
+
+/* PERUBAHAN: Styling untuk tombol Login dan Ikon Profil */
+        .nav-menu .nav-action-item a {
+            background-color: #f1c30f;
+            color: #2e4156;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+        
+        .nav-menu .nav-action-item a:hover {
+            background-color: white;
+            color: #2e4156;
+        }
+
+        .profile-menu {
+            position: relative;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f1c30f;
+            color: #2e4156;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .profile-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Dropdown Profil */
+        .profile-dropdown {
+			font-family: Gotham;
+            display: none;
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            min-width: 180px;
+            z-index: 1001;
+            overflow: hidden;
+        }
+        
+        .profile-dropdown.show {
+            display: block;
+        }
+
+        .profile-dropdown a, .profile-dropdown button {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #2e4156;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .profile-dropdown a:hover, .profile-dropdown button:hover {
+            background-color: #f0f2f5;
+        }
 
 /* --- Hamburger Menu --- */
 .hamburger-menu {
@@ -408,7 +533,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .item-1 { grid-column: 1; grid-row: 1 / 3; }
+        .item-1 { grid-column: 1; grid-row: 1 / 4; }
         .item-2 { grid-column: 2; grid-row: 1 / 2; }
         .item-3 { grid-column: 2; grid-row: 2 / 4; }
         .item-center { grid-column: 1 / 3; grid-row: 4 / 6; }
@@ -530,7 +655,34 @@
 			.room-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
+
+			.profile-content {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+			.welcome-banner h1 {
+                font-size: 2rem;
+            }
+
 			
+			
+        }
+
+		@media (max-width: 992px) {
+            .logo-section {
+                display: none; /* Sembunyikan logo di layar kecil */
+            }
+            .registration-container {
+				flex-direction: column;
+                justify-content: center;
+                margin: 1rem;
+                padding: 1rem;
+                gap: 0;
+            }
+            .form-section {
+                max-width: 500px;
+            }
         }
 
 /* ==========================================================================
@@ -718,8 +870,440 @@
             height: 20px;
             border-radius: 4px;
         }
+
+/* =================================================================
+    11. PROFILE
+================================================================= */
+		.profile-page-wrapper {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 0rem;
+        }
+
+		/* Banner Selamat Datang */
+        .welcome-banner {
+            padding: 3rem 2rem;
+            background-color: #ffffff;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            text-align: center;
+            border: 1px solid #e9ecef;
+			background-size: cover;
+            background-position: center;
+            color: white;
+
+        }
+
+        .welcome-banner h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2e4156;
+            margin: 0;
+        }
+
+        /* Konten Utama Profil */
+        .profile-content {
+            background-color: #2e4156;
+            color: white;
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap; /* Agar responsif */
+        }
+
+        /* Kolom Kiri: Foto Profil */
+        .profile-picture-section {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .profile-picture-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-picture-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-picture-section p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Kolom Kanan: Detail Info & Keamanan */
+        .profile-details-section {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .profile-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .profile-block h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+			text-align: left;
+            padding: 2px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 500;
+            opacity: 0.8;
+			font-size: 20px;
+        }
+
+        .info-value {
+            font-weight: 700;
+			font-size: 20px;
+        }
+
+        .info-action a {
+            color: #f1c30f;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
         
+        /* Tombol */
+        .action-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
         
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-logout {
+            background-color: #e9ecef;
+            color: #2e4156;
+        }
+
+        .btn-delete {
+            background-color: #3b4d61;
+            color: white;
+            border: 1px solid #4c627b;
+        }
+
+/* =================================================================
+    12. REGISTRASI
+================================================================= */
+
+		.registration-container {
+            /* width: 100%; */
+            max-width: 100%;
+            margin: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        /* Kolom Kiri: Logo */
+        .logo-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Kolom Kanan: Form Registrasi */
+        .form-section {
+            flex: 1;
+        }
+
+        .registration-form {
+            width: 100%;
+        }
+
+        .form-groupb {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-groupb label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .form-groupb input,
+        .form-groupb select {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: #495057;
+        }
+
+        /* Menghilangkan panah default pada select */
+        .form-groupb select {
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+        
+        .form-groupb input::placeholder {
+            color: #adb5bd;
+        }
+
+        .terms-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .terms-group label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .terms-group a {
+            color: #f1c30f;
+            text-decoration: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #f1c30f;
+            color: #2e4156;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #ffda47;
+        }
+
+/* =================================================================
+    13. LOGIN
+================================================================= */
+
+		.login-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            padding: 2rem;
+        }
+
+        /* Kolom Kiri: Logo */
+        .logo-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Kolom Kanan: Form Login */
+        .form-section {
+            flex: 1;
+        }
+
+        .login-form {
+            width: 100%;
+        }
+
+        .form-groupa {
+            margin-bottom: 1rem;
+        }
+
+        .form-groupa label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+			color: #495057;
+        }
+
+        .form-groupa input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: #495057;
+        }
+        
+        .form-groupa input::placeholder {
+            color: #adb5bd;
+        }
+        
+        .form-error {
+            color: #ffc107;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #f1c30f;
+            color: #2e4156;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background-color: #ffda47;
+        }
+
+        /* Divider "Atau" */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 2rem 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .5em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .5em;
+        }
+        
+        /* Form Kedua */
+        .secondary-login-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+			color: #495057;
+        }
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        
+        .form-footer a {
+            color: #f1c30f;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .signup-link {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .signup-link a {
+             color: #f1c30f;
+             text-decoration: none;
+             font-weight: 700;
+        }
+        
+/*=================================================================
+    XX.
+	PAGE: PEMINJAMAN
+	SUB-PAGE: PEMINJAMAN --> INFORMASI RUANGAN
+================================================================= */
+		.page-banner_informasiRuangan {
+            position: relative;
+            height: 60vh;
+            min-height: 280px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page-banner_informasiRuangan::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+        }
 
 /* .vector-parent {
   	position: absolute;
@@ -1259,6 +1843,277 @@
 	height: 137px;
 } */
 
+/* ==========================================================================
+    ROOM DETAIL SECTION
+========================================================================== */
+
+.room-detail-section {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.room-detail-content {
+    max-width: 110vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.room-title {
+	font-family: 'Gotham Black', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2e4156;
+    margin-bottom: 2rem;
+}
+
+.room-description {
+    margin-bottom: 3rem;
+}
+
+.room-description p {
+	font-family: 'Gotham', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2e4156;
+    text-align: justify;
+    margin: 0;
+}
+
+.facilities-section {
+    margin-bottom: 3rem;
+}
+
+.facilities-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2e4156;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.facility-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 0.5rem 0;
+}
+
+.facility-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.facility-text {
+    font-size: 1rem;
+    color: #2e4156;
+    font-weight: 500;
+}
+
+.booking-button-section {
+    margin-top: 3rem;
+}
+
+.booking-btn {
+    background-color: #ffc107;
+    color: #2e4156;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+.booking-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 193, 7, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .room-title {
+        font-size: 2rem;
+    }
+    
+    .room-description p {
+        font-size: 1rem;
+    }
+    
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .facility-item {
+        justify-content: flex-start;
+    }
+    
+    .booking-btn {
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+    }
+
+	.page-banner_informasiRuangan {
+        height: 35vh;
+         min-height: 220px;
+    }
+}
+
+
+/*PAGE INFORMASIIIIIIII*/
+.denah-description {
+  font-size: 1.5rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  padding: 0 5rem;
+}
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 5rem;
+  -webkit-overflow-scrolling: touch; /* biar halus di mobile */
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none; /* hilangkan scrollbar */
+}
+
+.scroll-item {
+  flex: 0 0 auto; /* supaya item tidak melar */
+  width: 650px; /* ukuran kotak item */
+  scroll-snap-align: start;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.scroll-item img {
+  display: block;
+  width: 100%;
+  height: 350px; /* batas tinggi supaya tidak panjang ke bawah */
+  object-fit: cover; /* agar proporsi gambar tetap bagus */
+  border-radius: 10px;
+}
+
+/* BAGIAN TATA CARA MINJAM */
+.booking-steps-section {
+  padding: 2rem 1rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.steps-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1c2c45;
+}
+
+.steps-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-item {
+  width: 48%;
+  background: none;
+  margin: 1rem 0;
+}
+
+.step-item.left {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.step-item.right {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.step-item h4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #1c2c45;
+}
+
+.step-item p {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.circle-step {
+  background-color: #fff;
+  border: 4px solid #1c2c45;
+  color: #1c2c45;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  margin: 0.5rem 0;
+}
+
+/* Vertical line in the middle */
+.steps-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 100%;
+  background-color: #1c2c45;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .step-item {
+    width: 90%;
+    text-align: center !important;
+    align-self: center !important;
+  }
+
+  .step-item.left,
+  .step-item.right {
+    align-self: center;
+  }
+}
 /* =================================================================
     11. FAQ
 ================================================================= */

@@ -11,14 +11,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
-  <title>Beranda | SIGMA</title>
+  <title>Login | SIGMA</title>
 </head>
 <body>
 
-    <div class="notloginhome">
+    <div class="masuk">
     
         <!-- Header -->
-        <header class="header-main">
+        <header class="header-static">
             <div class="header-container">
                 
                 <a href="{{ url('/') }}" class="header-logo">
@@ -71,47 +71,56 @@
                 <a href="login">Login</a>
         </div>
 
-        <main>
-        <!-- Hero Section sebagai Banner -->
-        <section class="hero" style="background-image: url('{{ asset('storage/image/gambar_head.png') }}');">
-                    <div class="container hero-inner">
-                        <form action="/peminjaman" method="GET" class="hero-booking-form">
-                            <!-- PERUBAHAN: Logo ditambahkan di sini -->
-                            <img src="{{ asset('storage/image/LOGO_SIGMA_1_Vector.svg') }}" alt="Logo SIGMA" class="form-logo">
-                            <div class="form-group">
-                                <label for="booking-date">Pilih Tanggal Peminjaman</label>
-                                <input type="date" id="booking-date" name="tanggal" required>
-                            </div>
-                            <button type="submit" class="btn-primary">Booking Sekarang</button>
-                        </form>
+        <main class="login-container">
+            <!-- Kolom Kiri untuk Logo -->
+            <aside class="logo-section">
+                <img src="{{ asset('storage/image/ICON_SIGMA_PUTIH1.svg') }}" alt="Logo SIGMA">
+            </aside>
+
+            <!-- Kolom Kanan untuk Form -->
+            <section class="form-section">
+                <!-- Form Login IMISSU -->
+                <form action="#" method="POST" class="login-form">
+                    @csrf
+                    <div class="form-groupa">
+                        <label for="imissu-email">Email</label>
+                        <input type="email" id="imissu-email" name="imissu_email" placeholder="Masukkan Email imssu" required>
                     </div>
-                </section>
+                    <div class="form-groupa">
+                        <label for="imissu-password">Password</label>
+                        <input type="password" id="imissu-password" name="imissu_password" placeholder="Masukkan Password imssu" required>
+                        <div class="form-error">Password salah</div>
+                    </div>
+                    <button type="submit" class="btn-submit">Lanjut</button>
+                </form>
 
-        <!-- Tentang SIGMA -->
-        <section class="about-section">
-            <div class="container">
-                <h2 id="about-sigma" class="section-title">
-                    <span>About </span><span class="text-yellow">SIGMA</span>
-                </h2>
-                <p class="section-subtitle">
-                    SIGMA dikembangkan untuk memberikan solusi digital dalam memfasilitasi proses peminjaman gedung dan perlengkapan di kampus. SIGMA diharapkan dapat mempercepat proses peminjaman dan memastikan transparansi dalam hal ketersediaan gedung, aturan peminjaman, dan informasi terkait gedung.
-                </p>
-            </div>
-        </section>
+                <div class="divider">Atau</div>
 
-        <section class="gallery-section">
-            <div class="staggered-gallery">
-                <img src="{{ asset('storage/image/Ruang_Kelas.jpg') }}" alt="Ruang kelas dengan kursi" class="gallery-item item-1">
-                <img src="{{ asset('storage/image/ac.jpg') }}" alt="Air Conditioner di dinding" class="gallery-item item-2">
-                <img src="{{ asset('storage/image/Ruang_Diskusi.jpg') }}" alt="Ruang kelas dengan whiteboard" class="gallery-item item-3">
-                <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Gedung Fakultas MIPA" class="gallery-item item-center">
-                <img src="{{ asset('storage/image/RektoratDrone1.jpeg') }}" alt="Gedung dari sudut lain" class="gallery-item item-4">
-                <img src="{{ asset('storage/image/Kelas_Kosong.jpg') }}" alt="Ruang kelas kosong" class="gallery-item item-5">
-                <img src="{{ asset('storage/image/proyektor.jpg') }}" alt="Meja dan TV di ruang kelas" class="gallery-item item-6">
-            </div>
-        </section>
-
+                <!-- Form Login SIGMA -->
+                <form action="#" method="POST" class="login-form">
+                    @csrf
+                    <div class="secondary-login-title">Di luar Civitas Akademika Udayana?</div>
+                    <div class="form-groupa">
+                        <label for="sigma-email">Email</label>
+                        <input type="email" id="sigma-email" name="sigma_email" placeholder="Masukkan Email SIGMA" required>
+                    </div>
+                    <div class="form-groupa">
+                        <label for="sigma-password">Password</label>
+                        <input type="password" id="sigma-password" name="sigma_password" placeholder="Masukkan Password SIGMA" required>
+                        <div class="form-footer">
+                            <div class="form-error">Password salah</div>
+                            <a href="#">Lupa Password?</a>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Lanjut</button>
+                </form>
+                
+                <div class="signup-link">
+                    Belum memiliki akun? <a href="#">Sign up</a>
+                </div>
+            </section>
         </main>
+
 
         <!-- Footer -->
         <footer class="footer-main">
@@ -120,7 +129,7 @@
                         <img src="{{ asset('storage/image/LOGO_SIGMA_3_Vector_Footer.svg') }}" alt="Logo SIGMA Udayana" class="footer-logo">
                         <nav class="footer-links">
                             <a href="#">Tentang SIGMA</a>
-                            <a href="faq">FAQ</a>
+                            <a href="#">FAQ</a>
                             <a href="#">S&K</a>
                             <a href="#">Kebijakan Privasi</a>
                         </nav>
@@ -153,16 +162,7 @@
     </div>
     
     <script>
-         document.addEventListener('DOMContentLoaded', function() {
-            const dateForm = document.getElementById('date-selection-form');
-
-            // Set tanggal minimum di kalender ke hari ini
-            const dateInput = document.getElementById('booking-date');
-            if (dateInput && dateForm) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.setAttribute('min', today);
-            }
-            });
+         
     </script>
     <script src="{{ asset('js/navbar.js') }}"></script>
 </body>
