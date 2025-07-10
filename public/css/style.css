@@ -1259,5 +1259,139 @@
 	height: 137px;
 } */
 
+/* =================================================================
+    11. FAQ
+================================================================= */
+/* FAQ Content */
+.faq-content {
+  width: 70%;
+}
 
+.faq-content h3 {
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.faq-content p {
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.faq-hero-section {
+    background-color: #ffffff; /* Biru muda masih boleh */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.faq-hero-section__title {
+    font-size: 2.2rem; /* dari 5rem atau 4rem */
+    font-weight: 700;
+    color: #2e4156;
+    margin: 0;
+}
+
+.faq-container {
+    display: flex;
+    align-items: flex-start;
+	
+    gap: 2.5rem;
+    padding: 2rem 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.faq-sidebar__list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-sidebar__list-item {
+  padding: 6px 12px;           /* Atur ruang atas-bawah dan samping */
+  line-height: 1.4;            /* Ketinggian baris biar enak dibaca */
+  border: 1px solid #ddd;      /* Kotak rapi */
+  border-radius: 6px;          /* Sudut sedikit melengkung */
+  margin-bottom: 8px;          /* Jarak antar item */
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #2e4156;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-sidebar__list-item:hover {
+  background-color: #e0ebff;   /* Efek hover */
+  color: #1a2b3c;
+  font-weight: 600;
+}
+
+.faq-sidebar__list-item--active {
+  background-color: #d1e0ff;
+  color: #1a2b3c;
+  font-weight: 600;
+}
+
+.faq-sidebar__list-item--active {
+    font-weight: 600;
+    color: #1a2b3c;
+}
+
+.faq-sidebar__list-item--active {
+    font-weight: bold;
+    color: #2e4156;
+}
+.faq-main-content {
+    flex: 1;
+    padding: 1rem;
+    color: #2e4156;
+}
+
+.faq-category__title {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+.faq-item__answer {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.faq-main-content {
+  flex: 3;
+  padding: 2rem;
+}
+
+.faq-main-content {
+  max-width: 700px; /* Batasi lebar agar tidak kepanjangan */
+  margin: 0 auto;   /* Tengahkan kontennya */
+  padding: 2rem;
+}
+
+.faq-category__title {
+  font-size: 1.8rem;     /* Ukuran bisa disesuaikan */
+  font-weight: bold;
+  color: #2c3e50;        /* Warna teks */
+  margin-bottom: 0.5rem;
+  text-align: left;    /* Tengahkan judul */
+}
+
+.faq-item__answer {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2c3e50;
+  text-align: justify;   /* Rata kiri-kanan */
+  margin-bottom: 2rem;
+}
 

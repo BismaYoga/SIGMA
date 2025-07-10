@@ -31,3 +31,7 @@ Route::get('/informasi', function () {
 Route::get('/bookingansaya', function () {
     return view('bookingansaya');
 })->middleware(['auth', 'verified'])->name('bookingansaya');
+
+Route::get('/faq', function () {
+    return view('faq');
+});

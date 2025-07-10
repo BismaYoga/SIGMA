@@ -118,7 +118,7 @@
                     <img src="{{ asset('storage/image/LOGO_SIGMA_3_Vector_Footer.svg') }}" alt="Logo SIGMA Udayana" class="footer-logo">
                     <nav class="footer-links">
                         <a href="#">Tentang SIGMA</a>
-                        <a href="#">FAQ</a>
+                        <a href="faq">FAQ</a>
                         <a href="#">S&K</a>
                         <a href="#">Kebijakan Privasi</a>
                     </nav>
@@ -151,6 +151,9 @@
     </div>
     
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateForm = document.getElementById('date-selection-form');
+
             // Logika untuk tombol hamburger
             hamburgerBtn.addEventListener('click', () => {
                 hamburgerBtn.classList.toggle('open');
