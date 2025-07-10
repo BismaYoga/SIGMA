@@ -1461,7 +1461,7 @@
     top: 35px;
   	bottom: 0.03px;
   	left: 0px;
-  	display: inherit;
+  	display:
   	align-items: center;
   	width: 384px;
   	height: 42.7px;
@@ -2188,6 +2188,10 @@
   font-weight: 600;
 }
 
+.facility-info-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .faq-sidebar__list-item--active {
     font-weight: 600;
     color: #1a2b3c;
@@ -2273,6 +2277,9 @@ body {
   text-align: center;
   color: #1a1a1a;
   margin-bottom: 3rem;
+  margin-right: 0.75rem;
+  min-width: 24px;
+  text-align: center;
 }
 
 .snk-list {
@@ -2392,4 +2399,453 @@ body {
 
 .privacy-list li strong {
   font-weight: 600;
+}
+
+/* ==========================================================================
+    BOOKING FORM SECTION
+========================================================================== */
+
+.booking-form-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #2e4156;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-family: 'Gotham', sans-serif;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2e4156;
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-select {
+    padding: 0.9rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2e4156;
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+}
+
+.form-input.error,
+.form-select.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.form-input::placeholder {
+    color: #6c757d;
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-upload-display {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    border: 2px dashed #e9ecef;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.file-upload-display:hover {
+    border-color: #ffc107;
+    background-color: #fff8e1;
+}
+
+.file-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.75rem;
+    opacity: 0.7;
+}
+
+.file-text {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+/* Schedule Section */
+.schedule-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.schedule-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2e4156;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.schedule-grid {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.time-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 60px;
+}
+
+.time-label {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2e4156;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+.schedule-timeline {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background-color: #dee2e6;
+    border-radius: 4px;
+    padding: 1px;
+}
+
+.time-slot {
+    height: 6px;
+    background-color: #28a745;
+    transition: background-color 0.3s ease;
+}
+
+.time-slot.booked {
+    background-color: #dc3545;
+}
+
+.time-slot.selected {
+    background-color: #ffc107;
+}
+
+/* Room Layout Section */
+.room-layout-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.layout-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2e4156;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.room-layout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.room-layout-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Submit Section */
+.form-submit-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.availability-status {
+    margin-bottom: 1rem;
+}
+
+.availability-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.availability-text.success {
+    color: #28a745;
+    background-color: #d4edda;
+}
+
+.availability-text.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+}
+
+.submit-btn {
+    background-color: #ffc107;
+    color: #2e4156;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    max-width: 300px;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 193, 7, 0.4);
+}
+
+.submit-btn.disabled {
+    background-color: #6c757d;
+    color: #ffffff;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.submit-btn:disabled {
+    background-color: #6c757d;
+    color: #ffffff;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .form-title {
+        font-size: 1.8rem;
+    }
+    
+    .schedule-grid {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .time-labels {
+        flex-direction: row;
+        min-width: auto;
+        justify-content: space-between;
+    }
+    
+    .time-label {
+        height: auto;
+        padding: 0.25rem;
+        font-size: 0.8rem;
+    }
+    
+    .schedule-timeline {
+        grid-template-columns: repeat(48, 1fr);
+    }
+    
+    .time-slot {
+        height: 20px;
+    }
+    
+    .submit-btn {
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+    }
+}
+
+/* ==========================================================================
+    FACILITIES INFO SECTION
+========================================================================== */
+
+.facilities-info-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.facilities-info-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2e4156;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.facilities-info-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.facility-info-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.facility-info-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.facility-info-icon {
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    min-width: 24px;
+    text-align: center;
+}
+
+.facility-info-text {
+    font-size: 0.95rem;
+    color: #2e4156;
+    font-weight: 500;
+}
+
+/* Terms Section */
+.terms-section {
+    margin: 2rem 0;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.terms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.terms-header:hover {
+    background-color: #e9ecef;
+}
+
+.terms-header.expanded {
+    background-color: #2e4156;
+}
+
+.terms-header.expanded .terms-title,
+.terms-header.expanded .terms-arrow {
+    color: white;
+}
+
+.terms-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2e4156;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.terms-arrow {
+    font-size: 1rem;
+    color: #2e4156;
+    transition: color 0.3s ease;
+}
+
+.terms-content {
+    padding: 1.5rem;
+    background-color: white;
+    border-top: 1px solid #e9ecef;
+}
+
+.terms-list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.terms-list > li {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.terms-list h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2e4156;
+    margin: 0 0 0.5rem 0;
+}
+
+.terms-list ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.terms-list ol li {
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.5;
 }
