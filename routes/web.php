@@ -35,3 +35,15 @@ Route::get('/peminjaman/InformasiRuangan', function () {
 Route::get('/bookingansaya', function () {
     return view('bookingansaya');
 })->middleware(['auth', 'verified'])->name('bookingansaya');
+
+Route::get('/snk', function () {
+    return view('snk'); // memanggil snk.blade.php
+})->name('snk');
+
+Route::get('/tentangsigma', function () {
+    return view('tentangsigma'); 
+})->name('tentangsigma');
+
+Route::get('/kebijakanprivasi', function () {
+    return view('kebijakanprivasi'); 
+})->name('kebijakanprivasi');

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
-  <title>Bookingan Saya | SIGMA</title>
+  <title>Informasi | SIGMA</title>
 </head>
 
 <body>
@@ -53,30 +53,79 @@
             <!-- Banner -->
             <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
                 <div class="banner-content">
-                    <h1 class="banner-title">Bookingan Saya</h1>
+                    <h1 class="banner-title">Syarat dan Ketentuan</h1>
                 </div>
             </section>
 
+            <!-- S&K Section -->
+    <section class="snk-section">
+      <div class="container">
+          <h1 class="snk-title">Syarat & Ketentuan Peminjaman Ruangan</h1>
+
+          <ol class="snk-list">
+            <li>
+              <h3>Tujuan Peminjaman</h3>
+              <ol type="a">
+                <li>Peminjaman gedung diperbolehkan untuk kegiatan perkuliahan, seminar, workshop, pelatihan, atau kegiatan lain yang telah mendapat persetujuan dari pihak pengelola.</li>
+                <li>Peminjaman gedung di luar kepentingan perkuliahan diwajibkan melampirkan surat pengajuan resmi melalui formulir peminjaman yang disediakan. Dengan ketentuan:
+                  <ol type="i">
+                    <li>Pengajuan peminjaman gedung untuk kepentingan di luar perkuliahan wajib dilakukan maksimal H-14 sebelum kegiatan berlangsung.</li>
+                    <li>Surat pengajuan resmi harus diunggah melalui form yang tersedia saat proses pengajuan dilakukan.</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          
+            <li>
+              <h3>Aturan Penggunaan Ruangan</h3>
+              <ol type="a">
+                <li>Peminjam diizinkan untuk mengubah tata letak ruangan sesuai kebutuhan kegiatan, dengan syarat tata letak wajib dikembalikan ke posisi semula setelah kegiatan selesai.</li>
+                <li>Peminjam bertanggung jawab penuh atas kebersihan dan keamanan ruangan selama masa pemakaian.</li>
+                <li>Segala kerusakan atau kehilangan peralatan yang terjadi selama masa peminjaman menjadi tanggung jawab peminjam dan wajib dilaporkan kepada Contact Person Reservasi melalui nomor telepon yang tercantum.</li>
+                <li>Biaya ganti rugi atas kerusakan atau kehilangan peralatan akan ditentukan oleh pengelola gedung berdasarkan ketentuan yang berlaku.</li>
+                <li>Pelanggaran terhadap syarat dan ketentuan peminjaman dapat berakibat pada larangan peminjaman gedung di masa mendatang.</li>
+              </ol>
+            </li>
+          
+            <li>
+              <h3>Ketentuan Lainnya</h3>
+              <ol type="a">
+                <li>Peminjam wajib mematuhi waktu penggunaan gedung sesuai jadwal yang telah disetujui.</li>
+                <li>Uang yang sudah ditransfer tidak dapat dikembalikan dan sudah berkomitmen untuk melakukan peminjaman.</li>
+                <li>Pemesanan perihal event yang sudah melakukan pembayaran tidak dapat dibatalkan, apabila ingin dibatalkan tidak ada pengembalian dana.</li>
+                <li>Kegiatan yang menimbulkan suara keras atau mengganggu lingkungan sekitar harus memperhatikan jam operasional dan izin khusus dari pengelola.</li>
+                <li>Larangan khusus:
+                  <ol type="i">
+                    <li>Dilarang membawa bahan berbahaya, seperti bahan mudah terbakar, bahan kimia beracun, atau barang yang dapat membahayakan keselamatan.</li>
+                    <li>Dilarang merokok di dalam ruangan atau di area yang tidak diperbolehkan.</li>
+                    <li>Dilarang menggunakan dekorasi yang merusak fasilitas gedung, seperti paku, lem tembak, atau bahan perekat yang meninggalkan bekas.</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          
+            <li>
+              <h3>Pembatalan Peminjaman</h3>
+              <ol type="a">
+                <li>Apabila proses peminjaman belum dikonfirmasi oleh admin, peminjam dapat membatalkan permohonan tanpa memerlukan persetujuan lebih lanjut.</li>
+                <li>Jika peminjaman telah dikonfirmasi oleh admin, pembatalan harus menunggu persetujuan dari admin untuk mengonfirmasi pembatalan.</li>
+              </ol>
+            </li>
+          
+            <li>
+              <h3>Tambahan Ketentuan</h3>
+              <ol>
+                <li type="a">Ketentuan tambahan dapat diterapkan oleh pengelola gedung sesuai kebutuhan dan situasi tertentu.</li>
+              </ol>
+            </li>
+          </ol>
+          
+      </div>
+  </section>
+          
         </main>
 
     
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <!-- Footer -->
         <footer class="footer-main">
@@ -115,9 +164,6 @@
                 </div>
             </div>
         </footer>
-
-
-
     </div>
 
      <script>

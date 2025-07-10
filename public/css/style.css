@@ -1423,7 +1423,9 @@
 }
 
 
-/*PAGE INFORMASIIIIIIII*/
+/* ==========================================================================
+    6. PAGE INFORMASI
+========================================================================== */
 .denah-description {
   font-size: 1.5rem;
   color: #444;
@@ -1558,3 +1560,144 @@
 }
 
 
+/* ==========================================================================
+    6. PAGE SNK
+========================================================================== */
+.snk-section {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+  font-family: 'Times New Roman', Arial;
+  color: #333;
+}
+
+.snk-section .container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.snk-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 3rem;
+}
+
+.snk-list {
+  font-size: 1.5rem;
+  line-height: 1.35;
+}
+
+.snk-list > li {
+  margin-bottom: 2rem;
+}
+
+.snk-list h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+	text-align: left;
+}
+
+.snk-list ol {
+  padding-left: 3rem;
+}
+
+.snk-list ol li {
+  margin-bottom: 0.4rem;
+  text-align: justify;
+}
+
+
+
+/* ==========================================================================
+    6. tentang sigma
+========================================================================== */
+.tentang-sigma-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  font-family: 'Times New Roman', sans-serif;
+}
+
+.tentang-sigma-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.sigma-logo img {
+  width: 200px;
+  height: auto;
+}
+
+.sigma-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sigma-text p {
+  font-size: 25px;
+  line-height: 1.8;
+  color: #222;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .tentang-sigma-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sigma-text p {
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+    6. Kebijakan Privasi
+========================================================================== */
+.privacy-policy-section {
+  padding: 50px 80px;
+  background-color: #ffffff;
+  font-family: 'Times New Roman', Arial;
+  color: #333;
+}
+
+.privacy-title {
+  font-size: 45px;
+  font-weight: 600;
+  color: #1f2b4a;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.privacy-policy-section p {
+  font-size: 23px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.privacy-list {
+  list-style-type: disc;
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.privacy-list li {
+  font-size: 23px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #333;
+	text-align: left;
+}
+
+.privacy-list li strong {
+  font-weight: 600;
+}

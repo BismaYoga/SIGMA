@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
-  <title>Bookingan Saya | SIGMA</title>
+  <title>Informasi | SIGMA</title>
 </head>
 
 <body>
@@ -53,30 +53,29 @@
             <!-- Banner -->
             <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
                 <div class="banner-content">
-                    <h1 class="banner-title">Bookingan Saya</h1>
+                    <h1 class="banner-title">Tentang SIGMA</h1>
                 </div>
             </section>
 
+                <!-- Konten Tentang SIGMA -->
+    <section class="tentang-sigma-section">
+      <div class="container tentang-sigma-flex">
+          <!-- Logo -->
+          <div class="sigma-logo">
+              <img src="{{ asset('storage/image/LOGO_SIGMA_1_Vector.svg') }}" alt="Logo SIGMA" />
+          </div>
+
+          <!-- Teks -->
+          <div class="sigma-text">
+              <p><strong>SIGMA</strong> dikembangkan untuk memberikan solusi digital dalam memfasilitasi proses peminjaman gedung dan perlengkapan di kampus. <strong>SIGMA</strong> diharapkan dapat mempercepat proses peminjaman dan memastikan transparansi dalam hal ketersediaan gedung, aturan peminjaman, dan informasi terkait gedung.</p>
+          </div>
+      </div>
+  </section>
+
+          
         </main>
 
     
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <!-- Footer -->
         <footer class="footer-main">
@@ -115,9 +114,6 @@
                 </div>
             </div>
         </footer>
-
-
-
     </div>
 
      <script>

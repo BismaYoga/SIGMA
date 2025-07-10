@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
-  <title>Bookingan Saya | SIGMA</title>
+  <title>Informasi | SIGMA</title>
 </head>
 
 <body>
@@ -53,30 +53,28 @@
             <!-- Banner -->
             <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
                 <div class="banner-content">
-                    <h1 class="banner-title">Bookingan Saya</h1>
+                    <h1 class="banner-title">Kebijakan Privasi</h1>
                 </div>
             </section>
 
+            <section class="privacy-policy-section">
+              <div class="container">
+                  <h2 class="privacy-title">Kebijakan Privasi</h2>
+                  <p><strong>SIGMA</strong> (Sistem Informasi Peminjaman Gedung Mahasiswa) berkomitmen untuk melindungi privasi pengguna. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi pribadi Anda ketika Anda menggunakan sistem pemesanan ruangan kami. Dengan menggunakan layanan kami, Anda menyetujui praktik-praktik yang dijelaskan dalam Kebijakan Privasi ini.</p>
+      
+                  <p>Kami dapat mengumpulkan informasi pribadi Anda, termasuk namun tidak terbatas pada:</p>
+                <ul class="privacy-list">
+                      <li><strong>Data Identitas:</strong> Nama lengkap, alamat email, nomor telepon, dan alamat fisik.</li>
+                      <li><strong>Data Login:</strong> Username dan password untuk mengakses akun Anda.</li>
+                      <li><strong>Data Pemesanan:</strong> Informasi mengenai ruangan yang dipesan, tanggal pemesanan, dan durasi penggunaan.</li>
+                      <li><strong>Data Pembayaran:</strong> Informasi pembayaran, seperti nomor kartu kredit atau rekening bank.</li>
+                  </ul>
+              </div>
+          </section>
+
+          
         </main>
-
     
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <!-- Footer -->
         <footer class="footer-main">
@@ -115,9 +113,6 @@
                 </div>
             </div>
         </footer>
-
-
-
     </div>
 
      <script>
