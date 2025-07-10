@@ -45,9 +45,9 @@
     </header>
     <div class="mobile-nav">
             <a href="/">Home</a>
-            <a href="#">Peminjaman</a>
-            <a href="#">Informasi</a>
-            <a href="#">Bookingan Saya</a>
+            <a href="peminjaman">Peminjaman</a>
+            <a href="informasi">Informasi</a>
+            <a href="bookingansaya">Bookingan Saya</a>
             <a href="login">Login</a>
     </div>
 
@@ -142,7 +142,7 @@
 
             // Set tanggal minimum di kalender ke hari ini
             const dateInput = document.getElementById('booking-date');
-            if (dateInput) {
+            if (dateInput && dateForm) {
                 const today = new Date().toISOString().split('T')[0];
                 dateInput.setAttribute('min', today);
             }
