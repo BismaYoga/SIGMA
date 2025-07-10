@@ -269,6 +269,59 @@
             </section>
         </main>
 
+        <!-- Confirmation Modal -->
+        <div id="confirmation-modal" class="modal-overlay">
+            <div class="modal-container">
+                <div class="modal-content">
+                    <h2 class="modal-title">Konfirmasi Peminjaman Ruanganmu</h2>
+                    
+                    <div class="confirmation-checklist">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="check1" class="confirmation-checkbox">
+                            <label for="check1" class="checkbox-label">
+                                Saya akan bertanggung jawab atas kebersihan ruangan selama pemakaian.
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="check2" class="confirmation-checkbox">
+                            <label for="check2" class="checkbox-label">
+                                Saya akan bertanggung jawab atas keamanan ruangan selama pemakaian.
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="check3" class="confirmation-checkbox">
+                            <label for="check3" class="checkbox-label">
+                                Saya akan memastikan ruangan telah bersih sebelum mengembalikan kunci.
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="check4" class="confirmation-checkbox">
+                            <label for="check4" class="checkbox-label">
+                                Saya akan menggunakan ruangan hanya selama batas waktu peminjaman saya.
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="check5" class="confirmation-checkbox">
+                            <label for="check5" class="checkbox-label">
+                                Saya bertanggung jawab atas segala jenis kerusakan yang disebabkan oleh saya selaku peminjam pada waktu peminjaman.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-buttons">
+                        <button type="button" id="cancel-booking" class="btn-secondary">Batal</button>
+                        <button type="button" id="confirm-booking" class="btn-primary" disabled>
+                            Konfirmasi Peminjaman Saya
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer -->
         <footer class="footer-main">
             <div class="container footer-grid">
@@ -317,6 +370,7 @@
             initializeFileUpload();
             initializeFormValidation();
             initializeTermsToggle();
+            initializeConfirmationModal();
             
             // Initialize time selectors with 10-minute intervals
             function initializeTimeSelectors() {
@@ -498,7 +552,8 @@
                     });
                     
                     if (isValid) {
-                        alert('Form berhasil dikirim! (Demo - belum terintegrasi dengan backend)');
+                        // Show confirmation modal instead of alert
+                        showConfirmationModal();
                     } else {
                         alert('Mohon lengkapi semua field yang wajib diisi!');
                     }
@@ -525,6 +580,83 @@
                 
                 // Initially collapsed
                 termsContent.style.display = 'none';
+            }
+            
+            // Initialize confirmation modal
+            function initializeConfirmationModal() {
+                const modal = document.getElementById('confirmation-modal');
+                const confirmBtn = document.getElementById('confirm-booking');
+                const cancelBtn = document.getElementById('cancel-booking');
+                const checkboxes = document.querySelectorAll('.confirmation-checkbox');
+                
+                // Check if all checkboxes are checked
+                function updateConfirmButton() {
+                    const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+                    confirmBtn.disabled = !allChecked;
+                    if (allChecked) {
+                        confirmBtn.classList.remove('disabled');
+                    } else {
+                        confirmBtn.classList.add('disabled');
+                    }
+                }
+                
+                // Add event listeners to checkboxes
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', updateConfirmButton);
+                });
+                
+                // Cancel button - close modal
+                cancelBtn.addEventListener('click', function() {
+                    hideConfirmationModal();
+                });
+                
+                // Confirm button - submit form
+                confirmBtn.addEventListener('click', function() {
+                    if (!confirmBtn.disabled) {
+                        // Here you would normally submit the form to backend
+                        alert('Peminjaman berhasil dikonfirmasi! (Demo - belum terintegrasi dengan backend)');
+                        hideConfirmationModal();
+                        
+                        // Reset form
+                        document.getElementById('booking-form').reset();
+                        
+                        // Reset availability text
+                        document.getElementById('availability-text').textContent = 'Ruangan Tersedia!';
+                        document.getElementById('availability-text').className = 'availability-text success';
+                    }
+                });
+                
+                // Close modal when clicking outside
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        hideConfirmationModal();
+                    }
+                });
+            }
+            
+            // Show confirmation modal
+            function showConfirmationModal() {
+                const modal = document.getElementById('confirmation-modal');
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Reset checkboxes
+                const checkboxes = document.querySelectorAll('.confirmation-checkbox');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                
+                // Disable confirm button initially
+                const confirmBtn = document.getElementById('confirm-booking');
+                confirmBtn.disabled = true;
+                confirmBtn.classList.add('disabled');
+            }
+            
+            // Hide confirmation modal
+            function hideConfirmationModal() {
+                const modal = document.getElementById('confirmation-modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
             }
         });
     </script>
