@@ -11,14 +11,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
-  <title>Beranda | SIGMA</title>
+  <title>Registrasi | SIGMA</title>
 </head>
 <body>
 
-    <div class="notloginhome">
+    <div class="registrasi">
     
         <!-- Header -->
-        <header class="header-main">
+        <header class="header-static">
             <div class="header-container">
                 
                 <a href="{{ url('/') }}" class="header-logo">
@@ -71,46 +71,67 @@
                 <a href="login">Login</a>
         </div>
 
-        <main>
-        <!-- Hero Section sebagai Banner -->
-        <section class="hero" style="background-image: url('{{ asset('storage/image/gambar_head.png') }}');">
-                    <div class="container hero-inner">
-                        <form action="/peminjaman" method="GET" class="hero-booking-form">
-                            <!-- PERUBAHAN: Logo ditambahkan di sini -->
-                            <img src="{{ asset('storage/image/LOGO_SIGMA_1_Vector.svg') }}" alt="Logo SIGMA" class="form-logo">
-                            <div class="form-group">
-                                <label for="booking-date">Pilih Tanggal Peminjaman</label>
-                                <input type="date" id="booking-date" name="tanggal" required>
-                            </div>
-                            <button type="submit" class="btn-primary">Booking Sekarang</button>
-                        </form>
+        <!-- PERUBAHAN: Menggunakan tag <main> -->
+        <main class="registration-container">
+            <!-- PERUBAHAN: Menggunakan tag <aside> -->
+            <aside class="logo-section">
+                <img src="{{ asset('storage/image/ICON_SIGMA_PUTIH1.svg') }}" alt="Logo SIGMA">
+            </aside>
+
+            <!-- PERUBAHAN: Menggunakan tag <section> -->
+            <section class="form-section">
+                <form action="{{ route('register') }}" method="POST" class="registration-form">
+                    @csrf
+
+                    <div class="form-groupb">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan Nama" required>
                     </div>
-                </section>
 
-        <!-- Tentang SIGMA -->
-        <section class="about-section">
-            <div class="container">
-                <h2 id="about-sigma" class="section-title">
-                    <span>About </span><span class="text-yellow">SIGMA</span>
-                </h2>
-                <p class="section-subtitle">
-                    SIGMA dikembangkan untuk memberikan solusi digital dalam memfasilitasi proses peminjaman gedung dan perlengkapan di kampus. SIGMA diharapkan dapat mempercepat proses peminjaman dan memastikan transparansi dalam hal ketersediaan gedung, aturan peminjaman, dan informasi terkait gedung.
-                </p>
-            </div>
-        </section>
+                    <div class="form-groupb">
+                        <label for="phone">Nomor HP</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Masukkan Nomor HP" required>
+                    </div>
 
-            <section class="gallery-section">
-                <div class="staggered-gallery">
-                    <img src="https://placehold.co/400x600/a9a9a9/ffffff?text=Ruang+Kelas" alt="Ruang kelas dengan kursi" class="gallery-item item-1">
-                    <img src="{{ asset('storage/image/ac.jpg') }}" alt="Air Conditioner di dinding" class="gallery-item item-2">
-                    <img src="https://placehold.co/400x400/d3d3d3/ffffff?text=Ruang+Diskusi" alt="Ruang kelas dengan whiteboard" class="gallery-item item-3">
-                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Gedung Fakultas MIPA" class="gallery-item item-center">
-                    <img src="{{ asset('storage/image/RektoratDrone1.jpeg') }}" alt="Gedung dari sudut lain" class="gallery-item item-4">
-                    <img src="https://placehold.co/400x500/f5f5f5/ffffff?text=Kelas+Kosong" alt="Ruang kelas kosong" class="gallery-item item-5">
-                    <img src="{{ asset('storage/image/proyektor.jpg') }}" alt="Meja dan TV di ruang kelas" class="gallery-item item-6">
-                </div>
+                    <div class="form-groupb">
+                        <label for="status">Status</label>
+                        <select id="status" name="status" required>
+                            <option value="" disabled selected>Pilih Status</option>
+                            <option value="mahasiswa">Mahasiswa</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                    </div>
+
+                    <div class="form-groupb">
+                        <label for="nim_nik">NIM / NIK</label>
+                        <input type="text" id="nim_nik" name="nim_nik" placeholder="Masukkan NIM / NIK" required>
+                    </div>
+
+                    <div class="form-groupb">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Masukkan Email" required>
+                    </div>
+
+                    <div class="form-groupb">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                    </div>
+
+                    <div class="form-groupb">
+                        <label for="password_confirmation">Konfirmasi Password</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Masukkan Password Kembali" required>
+                    </div>
+
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Dengan ini saya menyetujui seluruh isi dari <a href="#">syarat dan ketentuan</a> Sistem Informasi Peminjaman Gedung Mahasiswa Fakultas Matematika dan Ilmu Pengetahuan Alam.</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Lanjut</button>
+
+                </form>
             </section>
-
         </main>
 
         <!-- Footer -->
@@ -153,16 +174,7 @@
     </div>
     
     <script>
-         document.addEventListener('DOMContentLoaded', function() {
-            const dateForm = document.getElementById('date-selection-form');
-
-            // Set tanggal minimum di kalender ke hari ini
-            const dateInput = document.getElementById('booking-date');
-            if (dateInput && dateForm) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.setAttribute('min', today);
-            }
-            });
+         
     </script>
     <script src="{{ asset('js/navbar.js') }}"></script>
 </body>
