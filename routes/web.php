@@ -17,7 +17,8 @@ require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
 
 Route::get('/peminjaman', function () {
     return view('peminjaman');
