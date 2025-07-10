@@ -31,7 +31,25 @@
                     <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
                     <li><a href="informasi" id="informasiText">Informasi</a></li>
                     <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
-                    <li><a href="login" id="loginText">Login</a></li>
+                    @guest
+                        {{-- Tampilkan 'Login' jika pengguna belum login --}}
+                        <li><a href="{{ route('login') }}" id="loginText">Login</a></li>
+                    @endguest
+
+                    @auth
+                        {{-- Tampilkan 'Profil' dan 'Logout' jika pengguna sudah login --}}
+                        <li><a href="{{ route('home') }}" id="profileText">Profil</a></li>
+                        {{-- Opsi: Jika Anda ingin menampilkan nama pengguna instead of 'Profil' --}}
+                        {{-- <li><a href="{{ route('home') }}" id="profileText">{{ Auth::user()->name }}</a></li> --}}
+
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                {{-- Tombol Logout, sesuaikan style agar terlihat seperti link --}}
+                                <button type="submit" style="background:none; border:none; color:inherit; cursor:pointer; padding:0; font-family: inherit; font-size: inherit; margin: 0;">Logout</button>
+                            </form>
+                        </li>
+                    @endauth
                 </ul>
             </nav>
             <!-- Tombol Hamburger untuk Mobile -->
