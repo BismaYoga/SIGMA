@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookingController; 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,6 +33,6 @@ Route::get('/peminjaman/InformasiRuangan', function () {
     return view('peminjaman-InformasiRuangan');
 });
 
-Route::get('/bookingansaya', function () {
-    return view('bookingansaya');
-})->middleware(['auth', 'verified'])->name('bookingansaya');
+Route::get('/bookingansaya', [BookingController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('bookingansaya');
