@@ -29,10 +29,38 @@ Route::get('/informasi', function () {
     return view('informasi');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/registrasi', function () {
+    return view('registrasi');
+});
+
+Route::get('/masuk', function () {
+    return view('masuk');
+});
+
 Route::get('/peminjaman/InformasiRuangan', function () {
     return view('peminjaman-InformasiRuangan');
 });
 
-Route::get('/bookingansaya', [BookingController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('bookingansaya');
+Route::get('/bookingansaya', function () {
+    return view('bookingansaya');
+})->middleware(['auth', 'verified'])->name('bookingansaya');
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/snk', function () {
+    return view('snk'); // memanggil snk.blade.php
+})->name('snk');
+
+Route::get('/tentangsigma', function () {
+    return view('tentangsigma'); 
+})->name('tentangsigma');
+
+Route::get('/kebijakanprivasi', function () {
+    return view('kebijakanprivasi'); 
+})->name('kebijakanprivasi');
