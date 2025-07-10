@@ -5,20 +5,17 @@
   <meta name="viewport" content="initial-scale=1, width=device-width">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href=""/>
-  <link rel="icon" href="{{ asset('storage/image/ICON_SIGMA_PUTIH1.svg') }}">
-  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham:wght@400;500;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
   <title>Peminjaman | SIGMA</title>
-
 </head>
 
 <body>
     <div class="notloginpeminjaman">
         <!-- Header -->
-        <header class="header-main">
+        <header class="header-notlogin">
             <div class="header-container">
                 
                 <a href="{{ url('/home') }}" class="header-logo">
@@ -34,41 +31,84 @@
                         <li><a href="login" id="loginText">Login</a></li>
                     </ul>
                 </nav>
-                <!-- Tombol Hamburger untuk Mobile -->
-                <button class="hamburger-menu" aria-label="Buka menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="mobile-nav">
-                    <a href="home">Home</a>
-                    <a href="peminjaman">Peminjaman</a>
-                    <a href="informasi">Informasi</a>
-                    <a href="bookingansaya">Bookingan Saya</a>
-                    <a href="login">Login</a>
-                </div>
 
             </div>
         </header>
 
         <main>
             <!-- Banner -->
-            <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
-                <div class="banner-content">
-                    <h1 class="banner-title">Peminjaman</h1>
-                </div>
+            <section class="banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}')">
+            <div class="overlay">
+                <h1>Peminjaman</h1>
+            </div>
             </section>
 
-            <section class="date-selector-section">
-                <div class="date-form-container">
-                    <form id="date-selection-form" action="/peminjaman" method="GET">
-                        <input type="date" id="booking-date" name="tanggal" required>
-                        <!-- Tombol submit tidak diperlukan karena akan otomatis -->
+            <section class="bar-tanggal">
+                <div class="dropdown-bulan-tahun">
+                    <form class="dropdown">
+                    <label for="tahun">Tahun</label>
+                    <select id="tahun" name="tahun">
+                        <option value="2025">2025</option>
+                        <!-- Tambahkan opsi lain di sini -->
+                    </select>
+                    </form>
+                    
+                    <form class="dropdown1">
+                    <label for="bulan">Bulan</label>
+                    <select id="bulan" name="bulan">
+                        <option value="januari">Januari</option>
+                        <option value="februari">Februari</option>
+                        <option value="maret">Maret</option>
+                        <option value="april">April</option>
+                        <option value="mei">Mei</option>
+                        <option value="juni">Juni</option>
+                        <option value="juli">Juli</option>
+                        <option value="agustus">Agustus</option>
+                        <option value="september">September</option>
+                        <option value="oktober">Oktober</option>
+                        <option value="november">November</option>
+                        <option value="desember">Desember</option>
+                        <!-- Tambahkan opsi lain di sini -->
+                    </select>
                     </form>
                 </div>
-            </section>
 
-            
+                <nav class="tanggal">
+                    <button class="prev" aria-label="Sebelumnya">
+                    <span class="rectangle-prev"></span>
+                    <span>Prev</span>
+                    </button>
+
+                    <button class="next" aria-label="Berikutnya">
+                    <span class="rectangle-prev"></span>
+                    <span>Next</span>
+                    </button>
+
+                    <ul class="daftar-tanggal">
+                    <li class="tgl">
+                        <time datetime="2025-06-01">1</time>
+                    </li>
+                    <li class="tgl">
+                        <time datetime="2025-06-02">2</time>
+                    </li>
+                    <li class="tgl">
+                        <time datetime="2025-06-03">3</time>
+                    </li>
+                    <li class="tgl">
+                        <time datetime="2025-06-04">4</time>
+                    </li>
+                    <li class="tgl">
+                        <time datetime="2025-06-05">5</time>
+                    </li>
+                    <li class="tgl">
+                        <time datetime="2025-06-06">6</time>
+                    </li>
+                    <li class="tgl">
+                        <time datetime="2025-06-07">7</time>
+                    </li>
+                    </ul>
+                </nav>
+            </section>
 
         </main>
 
@@ -92,75 +132,63 @@
 
 
         <!-- Footer -->
-     <footer class="footer-main">
-            <div class="container footer-grid">
-                <div class="footer-col">
-                    <img src="{{ asset('storage/image/LOGO_SIGMA_3_Vector_Footer.svg') }}" alt="Logo SIGMA Udayana" class="footer-logo">
-                    <nav class="footer-links">
-                        <a href="#">Tentang SIGMA</a>
-                        <a href="#">FAQ</a>
-                        <a href="#">S&K</a>
-                        <a href="#">Kebijakan Privasi</a>
-                    </nav>
-                </div>
-                <div class="footer-col">
-                    <b class="footer-heading">Reservasi</b>
-                    <address>
-                        <p>S: reservationfmipa@sigma.ac.id</p>
-                        <p>T: +62 81234567891</p>
-                    </address>
-                    <b class="footer-heading">Pusat Bantuan</b>
-                    <address>
-                        <p>S: contact@sigma.ac.id</p>
-                        <p>T: +62 81234567891</p>
-                    </address>
-                </div>
-                <div class="footer-col">
-                    <b class="footer-heading">Kantor</b>
-                    <address>
-                        <p>Gedung Dekanat FMIPA lantai 4<br>Jl. Raya Kampus Unud, Bukit Jimbaran</p>
-                    </address>
-                    <b class="footer-heading">Operasional</b>
-                    <address>
-                        <p>08.00 - 16.00 WITA</p>
-                        <p>Monday - Friday</p>
-                    </address>
-                </div>
+        <footer class="component-footer">
+        <div class="footer">
+            <div class="call-parent">
+            <section class="reservation">
+                <b class="reservasi">Reservasi</b>
+                <address class="call-reservasi">
+                <p>S: reservationfmipa@sigma.ac.id</p>
+                <p>T: +62 81234567891</p>
+                </address>
+            </section>
+            <section class="contact-center">
+                <b class="reservasi">Pusat Bantuan</b>
+                <address class="call-reservasi">
+                <p>S: contact@sigma.ac.id</p>
+                <p>T: +62 81234567891</p>
+                </address>
+            </section>
             </div>
+
+            <div class="office-parent">
+            <section class="reservation">
+                <b class="reservasi">Kantor</b>
+                <address class="gedung-dekanat-fmipa-container" id="gedungDekanatFMIPA">
+                <p>Gedung Dekanat FMIPA lantai 4</p>
+                <p>Jl. Raya Kampus Unud, Bukit Jimbaran</p>
+                </address>
+            </section>
+            <section class="hours">
+                <b class="operasional">Operasional</b>
+                <div class="wita-monday-container">
+                <p>08.00 - 16.00 WITA</p>
+                <p>Monday - Friday</p>
+                </div>
+            </section>
+            </div>
+
+            <nav class="shortcut">
+            <div class="tentang-sigma" id="tentangSIGMAText">Tentang SIGMA</div>
+            <div class="faq" id="fAQText">FAQ</div>
+            <div class="sk" id="sKText">S&K</div>
+            <div class="kebijakan-privasi" id="kebijakanPrivasiText">Kebijakan Privasi</div>
+            </nav>
+
+            <div class="logo-sigma-footer">
+            <img class="group-logofooter" alt="Logo Group" src="/Assets/gambar/LOGO SIGMA 3 Vector Footer.svg">
+            <!-- <div class="group-div">
+                <div class="group-child1"></div>
+                
+            </div> -->
+            <!-- <img class="sigma-icon" alt="Logo SIGMA" src="SIGMA.svg">
+            <img class="udayana-icon" alt="Logo Udayana" src="UDAYANA.svg"> -->
+            </div>
+        </div>
         </footer>
 
 
 
     </div>
-    <script>
-            // Logika untuk tombol hamburger
-            hamburgerBtn.addEventListener('click', () => {
-                hamburgerBtn.classList.toggle('open');
-                mobileNav.classList.toggle('open');
-                document.body.classList.toggle('no-scroll');
-            });
-
-            //Kalender
-            document.addEventListener('DOMContentLoaded', function() {
-                const dateInput = document.getElementById('booking-date');
-                const dateForm = document.getElementById('date-selection-form');
-
-            // Set tanggal minimum di kalender ke hari ini
-            const dateInput = document.getElementById('booking-date');
-            if (dateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.setAttribute('min', today);
-
-            // Tambahkan event listener untuk auto-submit
-                dateInput.addEventListener('change', function() {
-                    // Cek jika input tanggal tidak kosong sebelum submit
-                    if (this.value) {
-                        dateForm.submit();
-                    }
-                });
-            }
-        });
-    </script>
-    <script src="{{ asset('js/navbar.js') }}"></script>
 
 </body>

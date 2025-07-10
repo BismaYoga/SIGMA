@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
   <title>Beranda | SIGMA</title>
-
 </head>
 <body>
 
@@ -22,13 +21,13 @@
     <header class="header-main">
         <div class="header-container">
             
-            <a href="{{ url('/home') }}" class="header-logo">
+            <a href="{{ url('/') }}" class="header-logo">
                 <img class="logo-sigma-icon" alt="Logo SIGMA" src="{{ asset('storage/image/LOGO_SIGMA_2_Vector_Header.svg') }}">
             </a>
 
             <nav class="header-nav">
                 <ul class="nav-menu">
-                    <li><a href="home" id="home">Home</a></li>
+                    <li><a href="/" id="home">Home</a></li>
                     <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
                     <li><a href="informasi" id="informasiText">Informasi</a></li>
                     <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
@@ -41,32 +40,32 @@
                 <span></span>
                 <span></span>
             </button>
-            <div class="mobile-nav">
-                <a href="home">Home</a>
-                <a href="peminjaman">Peminjaman</a>
-                <a href="informasi">Informasi</a>
-                <a href="bookingansaya">Bookingan Saya</a>
-                <a href="login">Login</a>
-            </div>
 
         </div>
     </header>
+    <div class="mobile-nav">
+            <a href="/">Home</a>
+            <a href="#">Peminjaman</a>
+            <a href="#">Informasi</a>
+            <a href="#">Bookingan Saya</a>
+            <a href="login">Login</a>
+    </div>
 
     <main>
     <!-- Hero Section sebagai Banner -->
-        <section class="hero" style="background-image: url('{{ asset('storage/image/gambar_head.png') }}');">
-            <div class="container hero-inner">
-                <form action="/peminjaman" method="GET" class="hero-booking-form">
-                    <!-- PERUBAHAN: Logo ditambahkan di sini -->
-                    <img src="{{ asset('storage/image/LOGO_SIGMA_1_Vector.svg') }}" alt="Logo SIGMA" class="form-logo">
-                    <div class="form-group">
-                        <label for="booking-date">Pilih Tanggal Peminjaman</label>
-                        <input type="date" id="booking-date" name="tanggal" required>
-                    </div>
-                    <button type="submit" class="btn-primary">Booking Sekarang</button>
-                </form>
-            </div>
-        </section>
+    <section class="hero" style="background-image: url('{{ asset('storage/image/gambar_head.png') }}');">
+                <div class="container hero-inner">
+                    <form action="/peminjaman" method="GET" class="hero-booking-form">
+                        <!-- PERUBAHAN: Logo ditambahkan di sini -->
+                        <img src="{{ asset('storage/image/LOGO_SIGMA_1_Vector.svg') }}" alt="Logo SIGMA" class="form-logo">
+                        <div class="form-group">
+                            <label for="booking-date">Pilih Tanggal Peminjaman</label>
+                            <input type="date" id="booking-date" name="tanggal" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Booking Sekarang</button>
+                    </form>
+                </div>
+            </section>
 
       <!-- Tentang SIGMA -->
       <section class="about-section">
