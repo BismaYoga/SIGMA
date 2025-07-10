@@ -159,6 +159,78 @@
 	color: #f1c30f;
 }
 
+/* PERUBAHAN: Styling untuk tombol Login dan Ikon Profil */
+        .nav-menu .nav-action-item a {
+            background-color: #f1c30f;
+            color: #2e4156;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        
+        .nav-menu .nav-action-item a:hover {
+            background-color: white;
+            color: #2e4156;
+        }
+
+        .profile-menu {
+            position: relative;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f1c30f;
+            color: #2e4156;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden; /* Untuk gambar profil */
+        }
+
+        .profile-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Dropdown Profil */
+        .profile-dropdown {
+            display: none; /* Sembunyi secara default */
+            position: absolute;
+            top: 120%; /* Posisi di bawah ikon */
+            right: 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            min-width: 180px;
+            z-index: 1001;
+            overflow: hidden;
+        }
+        
+        .profile-dropdown.show {
+            display: block; /* Tampilkan saat di-klik */
+        }
+
+        .profile-dropdown a, .profile-dropdown button {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #2e4156;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .profile-dropdown a:hover, .profile-dropdown button:hover {
+            background-color: #f0f2f5;
+        }
+
 /* --- Hamburger Menu --- */
 .hamburger-menu {
 	display: none; /* Sembunyi di desktop */
