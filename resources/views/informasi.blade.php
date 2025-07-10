@@ -57,6 +57,98 @@
                 </div>
             </section>
 
+            <section class="carousel-section">
+                <p class="denah-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur eaque itaque magnam provident minus commodi repellat molestias nostrum perferendis animi quasi, deserunt maiores reprehenderit ipsam consequuntur error optio assumenda minima! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum voluptatem aperiam mollitia deleniti possimus illum dicta doloremque? Expedita quo quisquam repellat, distinctio, culpa tempore voluptate accusamus in sit necessitatibus <fuga class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aspernatur laudantium omnis. Ut porro ullam libero. Consequuntur, accusantium eum, quas quis non iure pariatur necessitatibus totam reiciendis officiis, ullam fugit?</fuga></p>
+                <div class="horizontal-scroll">
+                  <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 1">
+                  </div>
+                  <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 2">
+                  </div>
+                  <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 3">
+                  </div>
+                  <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 4">
+                  </div>
+                  <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 5">
+                  </div>
+                  <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 6">
+                  </div>
+                </div>
+              </section>              
+
+
+              <section class="booking-steps-section">
+                <h2 class="steps-title">Tata Cara Melakukan Booking Ruangan</h2>
+              
+                <div class="steps-container">
+                  <div class="step-item left">
+                    <h4>Akses Halaman Peminjaman</h4>
+                    <p>
+                      Pertama, buka halaman peminjaman di situs Sigma. Pada halaman ini, Anda dapat memilih tanggal, bulan, dan tahun untuk memeriksa ketersediaan ruangan. Daftar ruangan yang tersedia akan ditampilkan, lengkap dengan status warna yang menunjukkan ketersediaan: <strong>HIJAU</strong> (tersedia), <strong>KUNING</strong> (sebagian terpakai), dan <strong>MERAH</strong> (penuh).
+                    </p>
+                  </div>
+                  <div class="circle-step">01</div>
+              
+                  <div class="step-item right">
+                    <h4>Pilih dan Lihat Detail Ruangan</h4>
+                    <p>
+                      Setelah memilih tanggal, pilih salah satu ruangan yang tersedia untuk melihat detailnya. Anda akan mendapatkan informasi mengenai nama ruangan, deskripsi singkat, fasilitas yang tersedia, dan tombol <strong>Booking Ruangan Sekarang</strong>. Klik nama ruangan untuk melanjutkan ke langkah berikutnya.
+                    </p>
+                  </div>
+                  <div class="circle-step">02</div>
+              
+                  <div class="step-item left">
+                    <h4>Isi Formulir Peminjaman</h4>
+                    <p>
+                      Setelah memilih ruangan, Anda akan diminta untuk mengisi formulir peminjaman. Formulir ini meminta informasi seperti nama peminjam, perihal peminjaman (apakah untuk perkuliahan atau acara), serta surat pengajuan (untuk peminjaman di luar perkuliahan). Pastikan semua kolom diisi dengan benar, kemudian klik tombol Konfirmasi Peminjaman.
+                    </p>
+                  </div>
+                  <div class="circle-step">03</div>
+              
+                  <div class="step-item right">
+                    <h4>Pembayaran dan Proses Peminjaman</h4>
+                    <p>
+                      Jika peminjaman Anda untuk acara di luar kampus UNUD, sistem akan menampilkan <strong>Virtual Account</strong> untuk melakukan pembayaran. Setelah pembayaran dikonfirmasi, status peminjaman akan diperbarui menjadi <em>“Peminjaman sedang diproses”</em>. Anda dapat memantau status peminjaman melalui halaman peminjaman yang ada di akun Anda.
+                    </p>
+                  </div>
+                  <div class="circle-step">04</div>
+              
+                  <div class="step-item left">
+                    <h4>Melihat Hasil Bookingan</h4>
+                    <p>
+                      Untuk melihat hasil bookingan Anda, buka halaman <strong>Bookingan Saya</strong>. Di halaman ini, Anda akan dapat melihat riwayat peminjaman yang telah dilakukan, termasuk nama gedung dan ruangan yang dipinjam, waktu peminjaman, dan status peminjaman.
+                    </p>
+                  </div>
+                  <div class="circle-step">05</div>
+                </div>
+              </section>
+              
+            <div class="horizontal-scroll">
+                <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 1">
+                </div>
+                <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 2">
+                </div>
+                <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 3">
+                </div>
+                <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 4">
+                </div>
+                <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 5">
+                </div>
+                <div class="scroll-item">
+                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Foto 6">
+            </div>
+            
+            
         </main>
 
     

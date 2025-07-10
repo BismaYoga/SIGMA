@@ -40,6 +40,10 @@ Route::get('/masuk', function () {
     return view('masuk');
 });
 
+Route::get('/peminjaman/InformasiRuangan', function () {
+    return view('peminjaman-InformasiRuangan');
+});
+
 Route::get('/bookingansaya', function () {
     return view('bookingansaya');
 })->middleware(['auth', 'verified'])->name('bookingansaya');

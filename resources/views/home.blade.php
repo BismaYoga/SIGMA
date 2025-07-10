@@ -99,17 +99,17 @@
             </div>
         </section>
 
-            <section class="gallery-section">
-                <div class="staggered-gallery">
-                    <img src="https://placehold.co/400x600/a9a9a9/ffffff?text=Ruang+Kelas" alt="Ruang kelas dengan kursi" class="gallery-item item-1">
-                    <img src="{{ asset('storage/image/ac.jpg') }}" alt="Air Conditioner di dinding" class="gallery-item item-2">
-                    <img src="https://placehold.co/400x400/d3d3d3/ffffff?text=Ruang+Diskusi" alt="Ruang kelas dengan whiteboard" class="gallery-item item-3">
-                    <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Gedung Fakultas MIPA" class="gallery-item item-center">
-                    <img src="{{ asset('storage/image/RektoratDrone1.jpeg') }}" alt="Gedung dari sudut lain" class="gallery-item item-4">
-                    <img src="https://placehold.co/400x500/f5f5f5/ffffff?text=Kelas+Kosong" alt="Ruang kelas kosong" class="gallery-item item-5">
-                    <img src="{{ asset('storage/image/proyektor.jpg') }}" alt="Meja dan TV di ruang kelas" class="gallery-item item-6">
-                </div>
-            </section>
+        <section class="gallery-section">
+            <div class="staggered-gallery">
+                <img src="{{ asset('storage/image/Ruang_Kelas.jpg') }}" alt="Ruang kelas dengan kursi" class="gallery-item item-1">
+                <img src="{{ asset('storage/image/ac.jpg') }}" alt="Air Conditioner di dinding" class="gallery-item item-2">
+                <img src="{{ asset('storage/image/Ruang_Diskusi.jpg') }}" alt="Ruang kelas dengan whiteboard" class="gallery-item item-3">
+                <img src="{{ asset('storage/image/Dekanat_Mipa.jpg') }}" alt="Gedung Fakultas MIPA" class="gallery-item item-center">
+                <img src="{{ asset('storage/image/RektoratDrone1.jpeg') }}" alt="Gedung dari sudut lain" class="gallery-item item-4">
+                <img src="{{ asset('storage/image/Kelas_Kosong.jpg') }}" alt="Ruang kelas kosong" class="gallery-item item-5">
+                <img src="{{ asset('storage/image/proyektor.jpg') }}" alt="Meja dan TV di ruang kelas" class="gallery-item item-6">
+            </div>
+        </section>
 
         </main>
 
