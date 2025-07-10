@@ -13,7 +13,7 @@
   <title>Peminjaman | SIGMA</title>
 </head>
 
-<body>
+<body> 
     <div class="notloginpeminjaman">
         <!-- Header -->
         <header class="header-main">
@@ -26,9 +26,9 @@
                 <nav class="header-nav">
                     <ul class="nav-menu">
                         <li><a href="/" id="home">Home</a></li>
-                        <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
-                        <li><a href="informasi" id="informasiText">Informasi</a></li>
-                        <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
+                        <li><a href="/peminjaman" id="peminjamanText">Peminjaman</a></li>
+                        <li><a href="/informasi" id="informasiText">Informasi</a></li>
+                        <li><a href="/bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
                         <li><a href="login" id="loginText">Login</a></li>
                     </ul>
                 </nav>
@@ -51,13 +51,68 @@
 
         <main>
             <!-- Banner -->
-            <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
-                <div class="banner-content">
-                    <h1 class="banner-title">Peminjaman</h1>
+            <section class="page-banner_informasiRuangan" style="background-image: url('{{ asset('storage/image/Banner_InformasiRuangan.png') }}');"></section>
+
+            <!-- Room Detail Section -->
+            <section class="room-detail-section">
+                <div class="container">
+                    <div class="room-detail-content">
+                        <!-- Room Title -->
+                        <h1 class="room-title">Ruang Kuliah 1.1</h1>
+                        
+                        <!-- Room Description -->
+                        <div class="room-description">
+                            <p>Ruang Kuliah 1.1 merupakan sebuah ruang yang memiliki fokus untuk digunakan dalam kegiatan perkuliahan. Tempatnya yang strategis berada di depan ruang koordinator program studi, memberikan akses dalam berkoordinasi terkait perkuliahan. Di sisi lain, ruang perkuliahan ini juga dapat digunakan untuk berbagai kegiatan lainnya seperti rapat, seminar, dan kegiatan lainnya yang berkaitan dengan perkuliahan.</p>
+                        </div>
+
+                        <!-- Facilities Section -->
+                        <div class="facilities-section">
+                            <h2 class="facilities-title">Fasilitas :</h2>
+                            <div class="facilities-grid">
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">AC</span>
+                                </div>
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">1 Meja Dosen</span>
+                                </div>
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">24 Meja</span>
+                                </div>
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">1 Bangku Dosen</span>
+                                </div>
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">24 Bangku</span>
+                                </div>
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">Layar Proyektor</span>
+                                </div>
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">LCD Proyektor</span>
+                                </div>
+                                <div class="facility-item">
+                                    <span class="facility-icon">✓</span>
+                                    <span class="facility-text">Kabel HDMI</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Booking Button -->
+                        <div class="booking-button-section">
+                            <a href="#" class="btn-primary booking-btn">Booking Ruangan Sekarang!</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section class="date-selector-section">
+            {{-- <section class="date-selector-section">
                 <div class="date-form-container">
                     <form id="date-selection-form" action="/peminjaman" method="GET">
                         <input type="date" id="booking-date" name="tanggal" required>
@@ -71,7 +126,7 @@
                 <div class="availability-container">
                     <h2 class="floor-title">LANTAI 1</h2>
                     <div class="room-grid">
-                        <a href="/peminjaman/InformasiRuangan" class="room-card unavailable">
+                        <a href="#" class="room-card unavailable">
                             <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+1.1" alt="Ruang 1.1">
                             <div class="room-label">RUANG 1.1</div>
                         </a>
@@ -206,28 +261,11 @@
                         <span>Semua Jam Tersedia</span>
                     </div>
                 </div>
-            </section>
+            </section> --}}
+
+
 
         </main>
-
-    
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <!-- Footer -->
         <footer class="footer-main">
@@ -266,40 +304,36 @@
                 </div>
             </div>
         </footer>
-
-
-
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dateInput = document.getElementById('booking-date');
-        const dateForm = document.getElementById('date-selection-form');
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('booking-date');
+            const dateForm = document.getElementById('date-selection-form');
 
-        if (dateInput && dateForm) {
-            // Set tanggal minimum ke hari ini
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min', today);
+            if (dateInput && dateForm) {
+                // Set tanggal minimum ke hari ini
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
 
-            // Cek jika sudah ada tanggal di URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const dateFromUrl = urlParams.get('tanggal');
-            if (dateFromUrl) {
-                dateInput.value = dateFromUrl;
-            } else {
-                // Jika tidak ada tanggal di URL, set ke hari ini
-                dateInput.value = today;
-            }
-
-            // Tambahkan event listener untuk auto-submit
-            dateInput.addEventListener('change', function() {
-                if (this.value) {
-                    dateForm.submit();
+                // Cek jika sudah ada tanggal di URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const dateFromUrl = urlParams.get('tanggal');
+                if (dateFromUrl) {
+                    dateInput.value = dateFromUrl;
+                } else {
+                    // Jika tidak ada tanggal di URL, set ke hari ini
+                    dateInput.value = today;
                 }
-            });
-        }
-    });
-</script>
-    <script src="{{ asset('js/navbar.js') }}"></script>
 
+                // Tambahkan event listener untuk auto-submit
+                dateInput.addEventListener('change', function() {
+                    if (this.value) {
+                        dateForm.submit();
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
 </body>
