@@ -72,23 +72,23 @@
                     <h2 class="floor-title">LANTAI 1</h2>
                     <div class="room-grid">
                         <a href="/peminjaman/InformasiRuangan" class="room-card unavailable">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+1.1" alt="Ruang 1.1">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 1.1">
                             <div class="room-label">RUANG 1.1</div>
                         </a>
                         <a href="#" class="room-card unavailable">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+1.2" alt="Ruang 1.2">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 1.2">
                             <div class="room-label">RUANG 1.2</div>
                         </a>
                         <a href="#" class="room-card available">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+1.3" alt="Ruang 1.3">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 1.3">
                             <div class="room-label">RUANG 1.3</div>
                         </a>
                         <a href="#" class="room-card available">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+1.4" alt="Ruang 1.4">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 1.4">
                             <div class="room-label">RUANG 1.4</div>
                         </a>
                         <a href="#" class="room-card unavailable">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+Senat" alt="Ruang Senat">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Rapat_Senat.jpg') }}" alt="Ruang Senat">
                             <div class="room-label">RUANG SENAT</div>
                         </a>
                     </div>
@@ -99,27 +99,27 @@
                     <h2 class="floor-title">LANTAI 2</h2>
                     <div class="room-grid">
                         <a href="#" class="room-card partial">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+2.1" alt="Ruang 2.1">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 2.1">
                             <div class="room-label">RUANG 2.1</div>
                         </a>
                         <a href="#" class="room-card unavailable">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+2.2" alt="Ruang 2.2">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 2.2">
                             <div class="room-label">RUANG 2.2</div>
                         </a>
                         <a href="#" class="room-card available">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+2.3" alt="Ruang 2.3">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 2.3">
                             <div class="room-label">RUANG 2.3</div>
                         </a>
                         <a href="#" class="room-card available">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+2.4" alt="Ruang 2.4">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 2.4">
                             <div class="room-label">RUANG 2.4</div>
                         </a>
                         <a href="#" class="room-card unavailable">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+2.5" alt="Ruang 2.5">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 2.5">
                             <div class="room-label">RUANG 2.5</div>
                         </a>
                         <a href="#" class="room-card partial">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+Rapat" alt="Ruang Rapat">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Rapat_Senat.jpg') }}" alt="Ruang Rapat">
                             <div class="room-label">RUANG RAPAT</div>
                         </a>
                     </div>
@@ -130,27 +130,27 @@
                     <h2 class="floor-title">LANTAI 3</h2>
                     <div class="room-grid">
                         <a href="#" class="room-card partial">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+3.1" alt="Ruang 3.1">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 3.1">
                             <div class="room-label">RUANG 3.1</div>
                         </a>
                         <a href="#" class="room-card partial">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+3.2" alt="Ruang 3.2">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 3.2">
                             <div class="room-label">RUANG 3.2</div>
                         </a>
                         <a href="#" class="room-card available">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+3.3" alt="Ruang 3.3">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 3.3">
                             <div class="room-label">RUANG 3.3</div>
                         </a>
                         <a href="#" class="room-card available">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Ruang+3.4" alt="Ruang 3.4">
+                            <img src="{{ asset('storage/image/Informasi_Ruang_Kelas.jpg') }}" alt="Ruang 3.4">
                             <div class="room-label">RUANG 3.4</div>
                         </a>
                         <a href="#" class="room-card unavailable">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Lab+Komputer+1" alt="Lab Komputer 1">
+                            <img src="{{ asset('storage/image/Informasi_Labkom.jpg') }}" alt="Lab Komputer 1">
                             <div class="room-label">LAB KOMPUTER 1</div>
                         </a>
                         <a href="#" class="room-card unavailable">
-                            <img src="https://placehold.co/300x200/e9ecef/6c757d?text=Lab+Komputer+2" alt="Lab Komputer 2">
+                            <img src="{{ asset('storage/image/Informasi_Labkom.jpg') }}" alt="Lab Komputer 2">
                             <div class="room-label">LAB KOMPUTER 2</div>
                         </a>
                     </div>

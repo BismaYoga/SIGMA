@@ -1975,7 +1975,7 @@
     }
 
 	.page-banner_informasiRuangan {
-        height: 35vh;
+        height: 60vh;
          min-height: 220px;
     }
 }
@@ -2566,7 +2566,7 @@ body {
 }
 
 .time-slot {
-    height: 6px;
+    height: 39px;
     background-color: #28a745;
     transition: background-color 0.3s ease;
 }
@@ -2828,6 +2828,7 @@ body {
 }
 
 .terms-list > li {
+    font-size: 1.1rem;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -2840,6 +2841,7 @@ body {
 }
 
 .terms-list ol {
+    font-size: 1.1rem;
     margin: 0.5rem 0;
     padding-left: 1.5rem;
 }

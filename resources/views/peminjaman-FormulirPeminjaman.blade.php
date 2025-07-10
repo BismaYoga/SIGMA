@@ -146,6 +146,7 @@
                                     <div class="schedule-timeline">
                                         <!-- Timeline will be populated by JavaScript -->
                                     </div>
+                                    
                                 </div>
                             </div>
 
