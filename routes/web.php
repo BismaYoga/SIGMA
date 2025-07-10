@@ -28,6 +28,10 @@ Route::get('/informasi', function () {
     return view('informasi');
 });
 
+Route::get('/peminjaman/InformasiRuangan', function () {
+    return view('peminjaman-InformasiRuangan');
+});
+
 Route::get('/bookingansaya', function () {
     return view('bookingansaya');
 })->middleware(['auth', 'verified'])->name('bookingansaya');
