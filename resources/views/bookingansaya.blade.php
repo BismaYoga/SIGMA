@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
   <title>Bookingan Saya | SIGMA</title>
+  @vite('resources/css/app.css')
 </head>
 
 <body>
-    <div class="notloginpeminjaman">
+    <div>
         <!-- Header -->
         <header class="header-main">
             <div class="header-container">
@@ -56,7 +57,13 @@
                     <h1 class="banner-title">Bookingan Saya</h1>
                 </div>
             </section>
-
+            <div class="md:h-96 w-full flex justify-center items-center ">
+                <div class="bg-gray-200 md:h-[90%] w-[95%] rounded-3xl ">
+                    <h1 class="rounded-xl w-24">Hi</h1>
+                    <h1>waktu</h1>
+                    <h1>status</h1>
+                </div>             
+            </div>
         </main>
 
     
