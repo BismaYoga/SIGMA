@@ -50,60 +50,39 @@
         </div>
 
         <main>
-            <!-- Banner -->
             <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
-                <div class="banner-content">
-                    <h1 class="banner-title">FREQUENTLY ASKED QUESTION</h1>
-                </div>
-            </section> 
-    
-
-        <!-- FAQ Content Section -->
-        <section class="faq-content-section">
-            <div class="faq-container">
-                <!-- Sidebar FAQ Categories -->
-                <aside class="faq-sidebar">
-                    <ol class="faq-sidebar__list">
-                        <li class="faq-sidebar__list-item faq-sidebar__list-item--active">Akun dan Login</li>
-                        <li class="faq-sidebar__list-item">Pemesanan Ruangan</li>
-                        <li class="faq-sidebar__list-item">Status Pemesanan</li>
-                        <li class="faq-sidebar__list-item">Fasilitas Ruangan</li>
-                        <li class="faq-sidebar__list-item">Pembayaran</li>
-                        <li class="faq-sidebar__list-item">Masalah Teknis</li>
-                    </ol>
-                </aside>
-
-                <!-- Main FAQ Content (Questions and Answers) -->
-                <div class="faq-main-content">
-                    <article class="faq-category">
-                        <h2 class="faq-category__title">Bagaimana cara membuat akun?</h2>
-                        <div class="faq-item">
-                            <p class="faq-item__answer">Untuk membuat akun, silakan klik tombol "Daftar" pada halaman utama. Isi formulir pendaftaran dengan data yang valid.</p>
-                        </div>
-                    </article>
-
-                    <article class="faq-category">
-                        <h2 class="faq-category__title">Lupa password?</h2>
-                        <div class="faq-item">
-                            <p class="faq-item__answer">Jika lupa password, klik tautan "Lupa Password" dan ikuti petunjuk untuk mereset password.</p>
-                        </div>
-                    </article>
-
-                    <article class="faq-category">
-                        <h2 class="faq-category__title">Mengapa saya tidak bisa login?</h2>
-                        <div class="faq-item">
-                            <p class="faq-item__answer">Pastikan Anda memasukkan username dan password dengan benar. Periksa apakah caps lock aktif. Jika masalah berlanjut, hubungi admin.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    <!-- End of .page-wrapper -->
-
-          
+              <div class="banner-content">
+                  <h1 class="banner-title">FAQ - Akun dan Login</h1>
+              </div>
+          </section>
+      
+          <section id="akun" class="faq-content-section">
+              <div class="faq-container">
+                  <article class="faq-category">
+                      <h2 class="faq-category__title">Bagaimana cara membuat akun?</h2>
+                      <div class="faq-item">
+                          <p class="faq-item__answer">Klik tombol "Daftar" di halaman utama dan isi data yang valid.</p>
+                      </div>
+                  </article>
+      
+                  <article class="faq-category">
+                      <h2 class="faq-category__title">Lupa password?</h2>
+                      <div class="faq-item">
+                          <p class="faq-item__answer">Klik "Lupa Password" lalu ikuti panduan untuk reset.</p>
+                      </div>
+                  </article>
+      
+                  <article class="faq-category">
+                      <h2 class="faq-category__title">Mengapa saya tidak bisa login?</h2>
+                      <div class="faq-item">
+                          <p class="faq-item__answer">Pastikan email & password benar. Jika masih gagal, hubungi admin.</p>
+                      </div>
+                  </article>
+              </div>
+          </section>
+    <!-- End of .page-wrapper -->          
         </main>
 
-    
 
         <!-- Footer -->
         <footer class="footer-main">
@@ -111,10 +90,10 @@
                 <div class="footer-col">
                     <img src="{{ asset('storage/image/LOGO_SIGMA_3_Vector_Footer.svg') }}" alt="Logo SIGMA Udayana" class="footer-logo">
                     <nav class="footer-links">
-                        <a href="#">Tentang SIGMA</a>
-                        <a href="faq">FAQ</a>
-                        <a href="#">S&K</a>
-                        <a href="#">Kebijakan Privasi</a>
+                        <a href="{{ route('tentangsigma') }}">Tentang SIGMA</a>
+                        <a href="{{ route('faq') }}">FAQ</a>
+                        <a href="{{ route('snk') }}">S&K</a>
+                        <a href="{{ route('kebijakanprivasi') }}">Kebijakan Privasi</a>
                     </nav>
                 </div>
                 <div class="footer-col">

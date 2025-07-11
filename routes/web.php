@@ -60,9 +60,31 @@ Route::get('/bookingansaya', [BookingController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('bookingansaya');
 
+// Route FAQ Utama
 Route::get('/faq', function () {
-    return view('faq');
-});
+    return view('faq.index');
+})->name('faq.index');
+
+// Route Halaman per Kategori
+Route::get('/faq/pemesanan', function () {
+    return view('faq.pemesanan');
+})->name('faq.pemesanan');
+
+Route::get('/faq/status', function () {
+    return view('faq.status');
+})->name('faq.status');
+
+Route::get('/faq/fasilitas', function () {
+    return view('faq.fasilitas');
+})->name('faq.fasilitas');
+
+Route::get('/faq/pembayaran', function () {
+    return view('faq.pembayaran');
+})->name('faq.pembayaran');
+
+Route::get('/faq/teknis', function () {
+    return view('faq.teknis');
+})->name('faq.teknis');
 
 Route::get('/snk', function () {
     return view('snk'); // memanggil snk.blade.php

@@ -120,7 +120,7 @@
                     <img src="{{ asset('storage/image/LOGO_SIGMA_3_Vector_Footer.svg') }}" alt="Logo SIGMA Udayana" class="footer-logo">
                     <nav class="footer-links">
                         <a href="{{ route('tentangsigma') }}">Tentang SIGMA</a>
-                        <a href="#">FAQ</a>
+                        <a href="faq">FAQ</a>
                         <a href="{{ route('snk') }}">S&K</a>
                         <a href="{{ route('kebijakanprivasi') }}">Kebijakan Privasi</a>
                     </nav>
