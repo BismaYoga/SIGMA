@@ -27,8 +27,30 @@
                         <li><a href="/" id="home">Home</a></li>
                         <li><a href="/peminjaman" id="peminjamanText">Peminjaman</a></li>
                         <li><a href="/informasi" id="informasiText">Informasi</a></li>
-                        <li><a href="/bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
-                        <li><a href="login" id="loginText">Login</a></li>
+                        @auth
+                            @if (Auth::user()->role === 'admin')
+                                    {{-- Tampilkan tautan ke dashboard admin jika pengguna adalah admin --}}
+                                <li><a href="/admin/dashboard" id="adminDashboardText">Dashboard Admin</a></li>
+                            @endif
+                            {{-- Menu ini hanya muncul jika pengguna sudah login --}}
+                            <li><a href="/bookingansaya">Bookingan Saya</a></li>
+                            <li class="profile-menu">
+                                <div class="profile-icon" id="profile-icon-trigger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.992 0 .75.75 0 1 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z" /></svg>
+                                </div>
+                                <div class="profile-dropdown" id="profile-dropdown-menu">
+                                    <a href="profile">Profil Saya</a>
+                                    <a href="/settings">Pengaturan</a>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit">Logout</button>
+                                    </form>
+                                </div>
+                            </li>
+                        @else
+                            {{-- Tampilkan Tombol Login jika pengguna adalah tamu --}}
+                            <li class="nav-action-item"><a href="{{ route('login') }}">Login</a></li>
+                        @endguest
                     </ul>
                 </nav>
                 <!-- Tombol Hamburger untuk Mobile -->

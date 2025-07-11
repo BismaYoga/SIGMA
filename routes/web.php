@@ -57,7 +57,7 @@ Route::get('/bookingansaya', [BookingController::class, 'index'])
     ->name('bookingansaya');
 
 Route::get('/faq', function () {
-    return view('faq');
+    return view('faq.index');
 });
 
 Route::get('/snk', function () {
