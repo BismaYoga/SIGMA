@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, width=device-width">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <link rel="stylesheet" href=""/>
-  <link rel="icon" href="{{ asset('storage/image/ICON_SIGMA_PUTIH1.svg') }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham:wght@400;500;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
-  <title>Informasi | SIGMA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href=""/>
+    <link rel="icon" href="{{ asset('storage/image/ICON_SIGMA_PUTIH1.svg') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
+    <title>Booking Berhasil | SIGMA</title>
 </head>
-
-<body>
+<body> 
     <div class="notloginpeminjaman">
         <!-- Header -->
         <header class="header-main">
@@ -26,9 +25,9 @@
                 <nav class="header-nav">
                     <ul class="nav-menu">
                         <li><a href="/" id="home">Home</a></li>
-                        <li><a href="peminjaman" id="peminjamanText">Peminjaman</a></li>
-                        <li><a href="informasi" id="informasiText">Informasi</a></li>
-                        <li><a href="bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
+                        <li><a href="/peminjaman" id="peminjamanText">Peminjaman</a></li>
+                        <li><a href="/informasi" id="informasiText">Informasi</a></li>
+                        <li><a href="/bookingansaya" id="bookinganSayaText">Bookingan Saya</a></li>
                         <li><a href="login" id="loginText">Login</a></li>
                     </ul>
                 </nav>
@@ -51,31 +50,26 @@
 
         <main>
             <!-- Banner -->
-            <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
-                <div class="banner-content">
-                    <h1 class="banner-title">Tentang SIGMA</h1>
+            <section class="page-banner_informasiRuangan_Sukses" style="background-image: url('{{ asset('storage/image/Banner_InformasiRuangan.png') }}');"></section>
+
+            <!-- Success Section -->
+            <section class="booking-success-section">
+                <div class="container">
+                    <div class="success-container">
+                        <div class="success-content">
+                            <h1 class="success-title">Peminjamanmu Sedang Diproses!</h1>
+                            <p class="success-message">
+                                Mohon menunggu konfirmasi peminjaman pada email atau pada bagian 
+                                Bookingan Saya di bawah ini!
+                            </p>
+                            <a href="/bookingansaya" class="btn-primary success-btn">
+                                Cek Bookingan Saya
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
-
-                <!-- Konten Tentang SIGMA -->
-    <section class="tentang-sigma-section">
-      <div class="container tentang-sigma-flex">
-          <!-- Logo -->
-          <div class="sigma-logo">
-              <img src="{{ asset('storage/image/LOGO_SIGMA_1_Vector.svg') }}" alt="Logo SIGMA" />
-          </div>
-
-          <!-- Teks -->
-          <div class="sigma-text">
-              <p><strong>SIGMA</strong> dikembangkan untuk memberikan solusi digital dalam memfasilitasi proses peminjaman gedung dan perlengkapan di kampus. <strong>SIGMA</strong> diharapkan dapat mempercepat proses peminjaman dan memastikan transparansi dalam hal ketersediaan gedung, aturan peminjaman, dan informasi terkait gedung.</p>
-          </div>
-      </div>
-  </section>
-
-          
         </main>
-
-    
 
         <!-- Footer -->
         <footer class="footer-main">
@@ -84,7 +78,7 @@
                     <img src="{{ asset('storage/image/LOGO_SIGMA_3_Vector_Footer.svg') }}" alt="Logo SIGMA Udayana" class="footer-logo">
                     <nav class="footer-links">
                         <a href="{{ route('tentangsigma') }}">Tentang SIGMA</a>
-                        <a href="faq">FAQ</a>
+                        <a href="#">FAQ</a>
                         <a href="{{ route('snk') }}">S&K</a>
                         <a href="{{ route('kebijakanprivasi') }}">Kebijakan Privasi</a>
                     </nav>
@@ -116,20 +110,22 @@
         </footer>
     </div>
 
-     <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const dateForm = document.getElementById('date-selection-form');
-            // Logika untuk tombol hamburger
-            hamburgerBtn.addEventListener('click', () => {
-                hamburgerBtn.classList.toggle('open');
-                mobileNav.classList.toggle('open');
-                document.body.classList.toggle('no-scroll');
-            });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize hamburger menu
+            const hamburgerBtn = document.querySelector('.hamburger-menu'); 
+            const mobileNav = document.querySelector('.mobile-nav'); 
 
-            
-                
+            if (hamburgerBtn && mobileNav) {
+                hamburgerBtn.addEventListener('click', () => {
+                    hamburgerBtn.classList.toggle('open');
+                    mobileNav.classList.toggle('open');
+                    document.body.classList.toggle('no-scroll');
+                });
+            }
         });
     </script>
     <script src="{{ asset('js/navbar.js') }}"></script>
 
 </body>
+</html>

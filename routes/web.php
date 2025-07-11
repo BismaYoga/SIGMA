@@ -8,7 +8,7 @@ use App\Http\Controllers\MahasiswaController;
 Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
 Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
 
-Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+Route::get('/peminjaman/FormulirPeminjaman', [BookingController::class, 'create'])->name('bookings.create');
 Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
 Route::get('/dashboard', function () {
@@ -50,10 +50,6 @@ Route::get('/masuk', function () {
 
 Route::get('/peminjaman/InformasiRuangan', function () {
     return view('peminjaman-InformasiRuangan');
-});
-
-Route::get('/peminjaman/FormulirPeminjaman', function () {
-    return view('peminjaman-FormulirPeminjaman');
 });
 
 Route::get('/bookingansaya', [BookingController::class, 'index'])
@@ -101,3 +97,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // Rute untuk MEMPERBARUI data (PUT/PATCH)
     Route::put('/admin/bookings/{booking}', [BookingController::class, 'update'])->name('admin.bookings.update');
 });
+
+Route::get('/peminjaman/sukses', function () {
+    return view('bookingSukses');
+})->name('bookingSukses');
