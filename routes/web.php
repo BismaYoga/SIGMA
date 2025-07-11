@@ -2,6 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookingController; 
+use App\Http\Controllers\MahasiswaController;
+
+Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
+Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
+
+Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -44,9 +52,13 @@ Route::get('/peminjaman/InformasiRuangan', function () {
     return view('peminjaman-InformasiRuangan');
 });
 
-Route::get('/bookingansaya', function () {
-    return view('bookingansaya');
-})->middleware(['auth', 'verified'])->name('bookingansaya');
+Route::get('/peminjaman/FormulirPeminjaman', function () {
+    return view('peminjaman-FormulirPeminjaman');
+});
+
+Route::get('/bookingansaya', [BookingController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('bookingansaya');
 
 // Route FAQ Utama
 Route::get('/faq', function () {
