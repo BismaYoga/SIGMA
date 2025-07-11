@@ -1295,6 +1295,19 @@
             text-align: center;
         }
 
+		.page-banner_informasiRuangan_Sukses {
+            position: relative;
+            height: 30vh;
+            min-height: 280px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
         .page-banner_informasiRuangan::before {
             content: '';
             position: absolute;
@@ -1305,7 +1318,7 @@
             background-color: rgba(0, 0, 0, 0);
         }
 
-/* .vector-parent {
+        /* .vector-parent {
   	position: absolute;
   	top: 0px;
   	left: 0px;
@@ -2965,5 +2978,102 @@ body {
     .btn-primary,
     .btn-secondary {
         width: 100%;
+    }
+}
+
+/* ==========================================================================
+    BOOKING SUCCESS PAGE STYLES
+========================================================================== */
+.booking-success-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(46, 65, 86, 0.1);
+}
+
+.success-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.success-title {
+    font-family: 'Gotham', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #2e4156;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.success-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+.success-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.success-btn:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .booking-success-section {
+        padding: 40px 0;
+        min-height: 60vh;
+    }
+    
+    .success-container {
+        margin: 0 20px;
+        padding: 40px 24px;
+    }
+    
+    .success-title {
+        font-size: 1.75rem;
+    }
+    
+    .success-message {
+        font-size: 1rem;
+    }
+    
+    .success-btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+        min-width: 180px;
     }
 }

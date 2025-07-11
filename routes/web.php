@@ -71,3 +71,7 @@ Route::get('/tentangsigma', function () {
 Route::get('/kebijakanprivasi', function () {
     return view('kebijakanprivasi'); 
 })->name('kebijakanprivasi');
+
+Route::get('/peminjaman/sukses', function () {
+    return view('bookingSukses');
+})->name('bookingSukses');

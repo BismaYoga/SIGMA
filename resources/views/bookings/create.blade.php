@@ -1,4 +1,3 @@
-<!-- resources/views/bookings/create.blade.php -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -724,8 +723,8 @@
                         })
                         .then(response => {
                             if (response.ok) {
-                                // Redirect to success page or reload
-                                window.location.reload();
+                                // Redirect to success page
+                                window.location.href = '/peminjaman/sukses';
                             } else {
                                 throw new Error('Network response was not ok');
                             }

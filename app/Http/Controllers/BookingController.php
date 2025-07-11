@@ -32,7 +32,7 @@ class BookingController extends Controller
         $validatedData = $request->validate([
             'subject' => 'required|string|max:255',
             'name' => 'required|string|max:255',
-            'nim' => 'required|string|max:20|unique:bookings,nim', // Pastikan NIM unik di tabel bookings
+            'nim' => 'required|string|max:20', // Removed unique constraint to allow same NIM multiple bookings
             'study_program' => 'required|string|max:255',
             'loan_document' => 'nullable|file|mimes:pdf,doc,docx|max:2048', // Untuk upload dokumen
             'booking_date' => 'required|date|after_or_equal:today', // Tanggal booking harus hari ini atau setelahnya
