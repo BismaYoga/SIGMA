@@ -8,7 +8,7 @@ use App\Http\Controllers\MahasiswaController;
 Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
 Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
 
-Route::get('/bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+Route::get('/peminjaman/FormulirPeminjaman', [BookingController::class, 'create'])->name('bookings.create');
 Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
 Route::get('/dashboard', function () {
@@ -52,39 +52,13 @@ Route::get('/peminjaman/InformasiRuangan', function () {
     return view('peminjaman-InformasiRuangan');
 });
 
-Route::get('/peminjaman/FormulirPeminjaman', function () {
-    return view('peminjaman-FormulirPeminjaman');
-});
-
 Route::get('/bookingansaya', [BookingController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('bookingansaya');
 
-// Route FAQ Utama
 Route::get('/faq', function () {
-    return view('faq.index');
-})->name('faq.index');
-
-// Route Halaman per Kategori
-Route::get('/faq/pemesanan', function () {
-    return view('faq.pemesanan');
-})->name('faq.pemesanan');
-
-Route::get('/faq/status', function () {
-    return view('faq.status');
-})->name('faq.status');
-
-Route::get('/faq/fasilitas', function () {
-    return view('faq.fasilitas');
-})->name('faq.fasilitas');
-
-Route::get('/faq/pembayaran', function () {
-    return view('faq.pembayaran');
-})->name('faq.pembayaran');
-
-Route::get('/faq/teknis', function () {
-    return view('faq.teknis');
-})->name('faq.teknis');
+    return view('faq');
+});
 
 Route::get('/snk', function () {
     return view('snk'); // memanggil snk.blade.php
