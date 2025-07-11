@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gotham+Black:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;700&display=swap" />
-  <title>Bookingan Saya | SIGMA</title>
+  <title>Cek Bookingan | SIGMA</title>
   @vite('resources/css/app.css')
 </head>
 
@@ -69,7 +69,7 @@
                 <a href="/">Home</a>
                 <a href="peminjaman">Peminjaman</a>
                 <a href="informasi">Informasi</a>
-                <a href="bookingansaya">Bookingan Saya</a>
+                <a href="bookingansaya">Konfirmasi Peminjaman</a>
                 <a href="login">Login</a>
         </div>
 
@@ -77,41 +77,54 @@
             <!-- Banner -->
             <section class="page-banner" style="background-image: url('{{ asset('storage/image/Banner_Dekanat.png') }}');">
                 <div class="banner-content">
-                    <h1 class="banner-title">Bookingan Saya</h1>
+                    <h1 class="banner-title">Konfirmasi Peminjaman</h1>
                 </div>
             </section>
             
             {{-- Bagian untuk menampilkan daftar bookingan --}}
             <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">Daftar Peminjaman Anda</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">Daftar Peminjaman</h2>
                 
                 {{-- PERBAIKAN UTAMA: Membungkus blok kartu dengan @forelse --}}
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    @forelse ($bookings as $booking)
+                    @forelse ($bookings as $booking)               
                         <div class="md:h-96 w-full flex justify-center items-center p-2">
                             <div class="bg-gray-200 md:h-[90%] w-[95%] rounded-3xl p-6 flex flex-col justify-between shadow-md">
                                 <!-- Nama Ruangan dan Status di bagian atas kartu -->
                                 <div class="flex justify-between items-start mb-4">
                                     <h1 class="text-2xl font-bold text-gray-800">{{ $booking->room_name }}</h1>
-                                    
-                                    @php
-                                        $statusColor = 'bg-gray-500';
-                                        $statusText = 'Tidak Diketahui';
-                                        
-                                        if ($booking->status == 'pending') {
-                                            $statusColor = 'bg-yellow-500';
-                                            $statusText = 'Menunggu Konfirmasi';
-                                        } elseif ($booking->status == 'confirmed') {
-                                            $statusColor = 'bg-green-500';
-                                            $statusText = 'Dikonfirmasi';
-                                        } elseif ($booking->status == 'rejected') {
-                                            $statusColor = 'bg-red-500';
-                                            $statusText = 'Ditolak';
-                                        }
-                                    @endphp
-                                    <span class="px-3 py-1 rounded-full text-sm font-semibold text-white {{ $statusColor }}">
-                                        {{ $statusText }}
-                                    </span>
+
+                                    {{-- Mengganti tautan (a) dengan formulir dan dropdown --}}
+                                    {{-- Formulir ini akan otomatis terkirim (submit) ketika status diubah --}}
+                                    <form method="POST" action="{{ route('admin.bookings.update', $booking->id) }}">
+                                        @csrf
+                                        @method('PUT') 
+
+                                        <select 
+                                            name="status" 
+                                            id="status-{{ $booking->id }}" 
+                                            class="px-3 py-1 rounded-full text-sm font-semibold border"
+                                            onchange="this.form.submit()"
+                                            
+                                            {{-- Mengubah warna latar belakang berdasarkan status yang dipilih --}}
+                                            @php
+                                                $color = 'bg-gray-500 text-white';
+                                                if ($booking->status == 'pending') {
+                                                    $color = 'bg-yellow-500 text-black'; 
+                                                } elseif ($booking->status == 'confirmed') {
+                                                    $color = 'bg-green-500 text-white';
+                                                } elseif ($booking->status == 'rejected') {
+                                                    $color = 'bg-red-500 text-white';
+                                                }
+                                            @endphp
+                                            style="background-color: {{ $color }};" 
+                                            class="{{ $color }}"
+                                        >
+                                            <option value="pending" {{ $booking->status == 'pending' ? 'selected' : '' }}>Menunggu Konfirmasi</option>
+                                            <option value="confirmed" {{ $booking->status == 'confirmed' ? 'selected' : '' }}>Dikonfirmasi</option>
+                                            <option value="rejected" {{ $booking->status == 'rejected' ? 'selected' : '' }}>Ditolak</option>
+                                        </select>
+                                    </form>
                                 </div>
                                 
                                 <!-- Detail Waktu dan Informasi Lainnya -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class BookingController extends Controller
 {
@@ -21,9 +22,42 @@ class BookingController extends Controller
         // Mengirim data ke tampilan Blade
         return view('bookingansaya', compact('bookings'));
     }
+    public function admin()
+    {
+        // Mengambil semua data peminjaman dari database
+        $bookings = Booking::all();
+
+        // Mengirim data ke tampilan Blade
+        return view('admin.dashboard', compact('bookings'));
+    }
     public function create()
     {
         return view('bookings.create');
+    }
+    
+    public function update(Request $request, Booking $booking)
+    {
+        // Validasi input status
+        $validatedData = $request->validate([
+            // Memastikan status yang dikirimkan adalah salah satu dari 'pending', 'confirmed', atau 'rejected'
+            'status' => 'required|in:pending,confirmed,rejected',
+        ]);
+
+        try {
+            // Perbarui status booking di database
+            $booking->update([
+                'status' => $validatedData['status'],
+            ]);
+
+            // Redirect kembali dengan pesan sukses
+            return redirect()->back()->with('success', 'Status booking berhasil diperbarui.');
+
+        } catch (\Exception $e) {
+            // Tangani error jika update gagal
+            Log::error('Error updating booking status: ' . $e->getMessage());
+
+            return redirect()->back()->with('error', 'Gagal memperbarui status. Silakan coba lagi.');
+        }
     }
 
     public function store(Request $request)

@@ -75,3 +75,29 @@ Route::get('/tentangsigma', function () {
 Route::get('/kebijakanprivasi', function () {
     return view('kebijakanprivasi'); 
 })->name('kebijakanprivasi');
+
+// Route::middleware(['auth', 'admin'])->group(function () {
+    
+//     // Rute-rute di sini hanya bisa diakses oleh admin yang sudah login
+//     Route::get('/admin/dashboard', [BookingController::class, 'index']);
+//     Route::get('/admin/edit', function () {
+//         return view('admin.edit');
+//     });
+// });
+
+Route::get('/admin/dashboard', [BookingController::class, 'admin'])
+    ->middleware(['auth', 'admin']);
+
+Route::get('/admin/edit', [BookingController::class, 'admin'])
+    ->middleware(['auth', 'admin'])
+    ->name('admin.edit');
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    // ... rute lainnya ...
+
+    // Rute untuk MENGEDIT data (GET)
+    Route::get('/admin/bookings/{booking}/edit', [BookingController::class, 'edit'])->name('admin.bookings.edit');
+
+    // Rute untuk MEMPERBARUI data (PUT/PATCH)
+    Route::put('/admin/bookings/{booking}', [BookingController::class, 'update'])->name('admin.bookings.update');
+});

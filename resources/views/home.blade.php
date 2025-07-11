@@ -33,6 +33,10 @@
                         
                         {{-- Logika untuk menu yang berubah sesuai status login --}}
                         @auth
+                            @if (Auth::user()->role === 'admin')
+                                    {{-- Tampilkan tautan ke dashboard admin jika pengguna adalah admin --}}
+                                <li><a href="/admin/dashboard" id="adminDashboardText">Dashboard Admin</a></li>
+                            @endif
                             {{-- Menu ini hanya muncul jika pengguna sudah login --}}
                             <li><a href="/bookingansaya">Bookingan Saya</a></li>
                             <li class="profile-menu">
